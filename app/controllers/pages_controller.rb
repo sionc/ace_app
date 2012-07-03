@@ -4,7 +4,40 @@ class PagesController < ApplicationController
   #
   #before_filter :authenticate_user!, :except => [:start, :about]
 
+  # GET "pages/account"
+  def account
+  end
+
+  # GET "pages/charts"
+  def charts
+  end
+
+  # GET "pages/dashboard"
   def dashboard
+  end
+
+  # GET "pages/error"
+  def error
+  end
+
+  # GET "pages/faq"
+  def faq
+  end
+
+  # GET "pages/login"
+  def login
+  end
+
+  # GET "pages/pricing"
+  def pricing
+  end
+
+  # GET "pages/reports"
+  def reports
+  end
+
+  # GET "pages/signup"
+  def signup
   end
 
   #def start
