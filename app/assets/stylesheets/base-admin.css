@@ -137,7 +137,7 @@ textarea {
 */
 
 .subnavbar {
-    	margin-bottom: 2.5em;
+    	/*margin-bottom: 2.5em;*/
     	
     	border-top: 1px solid #595959;
     }
@@ -163,7 +163,8 @@ textarea {
 	display: inline-block;
 	
 	height: 80px;
-	padding: 0;
+	/*height: auto;*/
+    padding: 0;
 	margin: 0;
 	
 	border-left: 1px solid #292929;

@@ -15,9 +15,14 @@
   <![endif]-->
 </head>
 <body>
+
 <%= render 'layouts/navbar' %>
 <%= render 'layouts/subnavbar' %>
-<%= yield %>
+<div class="main">
+  <div class="main-inner">
+    <%= yield %>
+  </div>
+</div>
 <%= render 'layouts/extra' %>
 <%= render 'layouts/footer' %>
 

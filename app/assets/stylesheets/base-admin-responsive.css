@@ -55,12 +55,12 @@
 	
 	
 	.subnavbar-inner {
-		height: auto;
+		height: auto !important;
 	}
 	
 	.subnavbar .container > ul {
 		width: 100%;
-		height: auto;
+		height: auto !important;
 		
 		border: none;
 	}
@@ -70,7 +70,7 @@
 		height: 70px;
 		margin-bottom: 0;
 		
-		border: none;
+		border: none !important;
 	}
 	
     

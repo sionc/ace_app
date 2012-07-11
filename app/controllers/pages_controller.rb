@@ -40,6 +40,10 @@ class PagesController < ApplicationController
   def signup
   end
 
+  # GET "pages/workspace"
+  def workspace
+  end
+
   #def start
   #  respond_to do |format|
   #    if user_signed_in?

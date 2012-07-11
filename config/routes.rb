@@ -10,6 +10,7 @@ AceApp::Application.routes.draw do
   get "/pages/pricing"
   get "/pages/reports"
   get "/pages/signup"
+  get "/pages/workspace"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

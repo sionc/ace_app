@@ -1,0 +1,43 @@
+<div id="workspace-container" class="container">
+  <ul class="nav nav-tabs" id="myTab">
+    <li class="dropdown">
+      <a href="" class="dropdown-toggle" data-toggle="dropdown">Recipes <b class="caret"></b></a>
+      <ul class="dropdown-menu">
+        <li><a href="#recipe1" data-toggle="tab">Recipe 1</a></li>
+        <li><a href="#recipe2" data-toggle="tab">Recipe 2</a></li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="" class="dropdown-toggle" data-toggle="dropdown">Controllers <b class="caret"></b></a>
+      <ul class="dropdown-menu">
+        <li><a href="#controller1" data-toggle="tab">Controller 1</a></li>
+        <li><a href="#controller2" data-toggle="tab">Controller 2</a></li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="" class="dropdown-toggle" data-toggle="dropdown">Robots <b class="caret"></b></a>
+      <ul class="dropdown-menu">
+        <li><a href="#robot1" data-toggle="tab">Quattro 1</a></li>
+        <li><a href="#robot2" data-toggle="tab">Quattro 2</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <div class="tab-content">
+    <div class="tab-pane active" id="recipe1">Recipe 1</div>
+    <div class="tab-pane" id="recipe2">Recipe 2</div>
+    <div class="tab-pane" id="controller1">
+      <h3>Controller 1</h3>
+      <br />
+      <%= render 'controller' %>
+    </div>
+    <div class="tab-pane" id="controller2">
+      <h3>Controller 2</h3>
+      <br />
+      <%= render 'controller' %>
+    </div>
+    <div class="tab-pane" id="robot1">Robot 1</div>
+    <div class="tab-pane" id="robot2">Robot 2</div>
+  </div>
+</div>
+<!-- /container -->
