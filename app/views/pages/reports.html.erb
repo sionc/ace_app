@@ -11,25 +11,26 @@
 	      			<div class="widget-content">
 	      				
 			      		<div id="big_stats" class="cf">
-							<div class="stat">								
-								<h4>Pending Sales Today</h4>
-								<span class="value">12</span>								
+                            <div class="stat">
+                                <h4>Orders Processed This Week</h4>
+                                <span class="value">14</span>
+                            </div> <!-- .stat -->
+
+                            <div class="stat">
+								<h4>Pallets Shipped This Week</h4>
+								<span class="value">280</span>
+							</div> <!-- .stat -->
+
+							<div class="stat">
+								<h4>Parts Processed This Week</h4>
+								<span class="value">60,480</span>
 							</div> <!-- .stat -->
 							
 							<div class="stat">								
-								<h4>Completed Sales Today</h4>
-								<span class="value">23</span>								
+								<h4>Overall Equipment Effectiveness</h4>
+								<span class="value">82%</span>
 							</div> <!-- .stat -->
 							
-							<div class="stat">								
-								<h4>Returned Items Today</h4>
-								<span class="value">2</span>								
-							</div> <!-- .stat -->
-							
-							<div class="stat">								
-								<h4>Something Else</h4>
-								<span class="value">13</span>								
-							</div> <!-- .stat -->
 						</div>
 					
 					</div> <!-- /widget-content -->
@@ -48,12 +49,12 @@
 						
 					<div class="widget-header">
 						<i class="icon-star"></i>
-						<h3>Quick Stats</h3>
+						<h3>Product Distribution This Week</h3>
 					</div> <!-- /widget-header -->
 					
 					<div class="widget-content">
 						
-						<div id="pie-chart" class="chart-holder"></div>
+						<div id="product-distribution-chart" class="chart-holder"></div>
 						
 					</div> <!-- /widget-content -->
 						
@@ -63,20 +64,19 @@
 	      		
 	      		
 		    </div> <!-- /span6 -->
-	      	
-	      	
+
 	      	<div class="span6">
 	      		
 	      		<div class="widget">
 							
 					<div class="widget-header">
 						<i class="icon-list-alt"></i>
-						<h3>Recent News</h3>
+						<h3>Parts Processed This Week</h3>
 					</div> <!-- /widget-header -->
 					
 					<div class="widget-content">
 						
-						<div id="bar-chart" class="chart-holder"></div>
+						<div id="weekly-progress-chart" class="chart-holder"></div>
 						
 					</div> <!-- /widget-content -->
 				
@@ -85,6 +85,26 @@
 		      </div> <!-- /span6 -->
 	      	
 	      </div> <!-- /row -->
+
+
+          <div class = "row">
+            <div class="span12">
+                <div class="widget">
+
+                <div class="widget-header">
+                    <i class="icon-star"></i>
+                    <h3>Product Flow</h3>
+                </div> <!-- /widget-header -->
+
+                <div class="widget-content">
+
+                    <div id="part-rate-chart" class="chart-holder"></div>
+
+                </div> <!-- /widget-content -->
+
+				</div> <!-- /widget -->
+            </div>
+          </div>
 	      
 	      
 	      
@@ -96,50 +116,50 @@
 	      			<div class="widget widget-table">
 						
 						<div class="widget-header">
-							<span class="icon-list-alt"></span>
-							<h3>Top Referrers</h3>
+							<span class="icon-list"></span>
+							<h3>Data Items</h3>
 						</div> <!-- .widget-header -->
-						
+
 						<div class="widget-content">
 							<table class="table table-bordered table-striped">
-								
-								<thead><tr>								
-									<th>Referrer</th>
-									<th>Uniques</th>								
+
+								<thead><tr>
+									<th>Data Item</th>
+									<th>Value</th>
 								</tr></thead>
-						
+
 							<tbody><tr>
-								<td class="description"><a href="http://google.com">http://google.com</a></td>
+								<td class="description"><a href="javascript:;">Data Item 1</a></td>
 								<td class="value"><span>1123</span></td>
 							</tr>
 							<tr>
-								<td class="description"><a href="http://yahoo.com">http://yahoo.com</a></td>
+								<td class="description"><a href="javascript:;">Data Item 2</a></td>
 								<td class="value"><span>927</span></td>
 							</tr>
 							<tr>
-								<td class="description"><a href="http://themeforest.net">http://themeforest.net</a></td>
+								<td class="description"><a href="javascript:;">Data Item 3</a></td>
 								<td class="value"><span>834</span></td>
 							</tr>
 							<tr>
-								<td class="description"><a href="http://codecanyon.net">codecanyon.net</a></td>
+								<td class="description"><a href="javascript:;">Data Item 4</a></td>
 								<td class="value"><span>625</span></td>
 							</tr>
 							<tr>
-								<td class="description"><a href="http://graphicriver.net">http://graphicriver.net</a></td>
+								<td class="description"><a href="javascript:;">Data Item 5</a></td>
 								<td class="value"><span>593</span></td>
 							</tr>
-							
+
 							<tr>
-								<td class="description"><a href="http://bing.com">http://bing.com</a></td>
-								<td class="value"><span>324</span></td>
+								<td class="description"><a href="javascript:;">Data Item 6</a></td>
+								<td class="value"><span>456</span></td>
 							</tr>
-							
-							
+
+
 						</tbody></table>
-							
+
 						</div> <!-- .widget-content -->
-						
-					</div> <!-- /widget -->	
+
+					</div>
 	      			
 	  			</div> <!-- /span4 -->
 	  			
@@ -150,41 +170,41 @@
 	  				<div class="widget widget-table">
 						
 						<div class="widget-header">
-							<span class="icon-file"></span>
-							<h3>Most Visited Pages</h3>
+							<span class="icon-list"></span>
+							<h3>Data Items</h3>
 						</div> <!-- .widget-header -->
 						
 						<div class="widget-content">
 							<table class="table table-bordered table-striped">
 								
 								<thead><tr>								
-									<th>Page</th>
-									<th>Visits</th>								
+									<th>Data Item</th>
+									<th>Value</th>
 								</tr></thead>
 						
 							<tbody><tr>
-								<td class="description"><a href="javascript:;">Homepage</a></td>
+								<td class="description"><a href="javascript:;">Data Item 1</a></td>
 								<td class="value"><span>1123</span></td>
 							</tr>
 							<tr>
-								<td class="description"><a href="javascript:;">Portfolio</a></td>
+								<td class="description"><a href="javascript:;">Data Item 2</a></td>
 								<td class="value"><span>927</span></td>
 							</tr>
 							<tr>
-								<td class="description"><a href="javascript:;">Services</a></td>
+								<td class="description"><a href="javascript:;">Data Item 3</a></td>
 								<td class="value"><span>834</span></td>
 							</tr>
 							<tr>
-								<td class="description"><a href="javascript:;">Contact Us</a></td>
+								<td class="description"><a href="javascript:;">Data Item 4</a></td>
 								<td class="value"><span>625</span></td>
 							</tr>
 							<tr>
-								<td class="description"><a href="javascript:;">Testimonials</a></td>
+								<td class="description"><a href="javascript:;">Data Item 5</a></td>
 								<td class="value"><span>593</span></td>
 							</tr>
 							
 							<tr>
-								<td class="description"><a href="javascript:;">Signup</a></td>
+								<td class="description"><a href="javascript:;">Data Item 6</a></td>
 								<td class="value"><span>456</span></td>
 							</tr>
 							
@@ -204,42 +224,42 @@
 	  				<div class="widget widget-table">
 						
 						<div class="widget-header">
-							<span class="icon-external-link"></span>
-							<h3>Browsers</h3>
+							<span class="icon-list"></span>
+							<h3>Data Items</h3>
 						</div> <!-- .widget-header -->
-						
+
 						<div class="widget-content">
 							<table class="table table-bordered table-striped">
-								
-								<thead><tr>								
-									<th>Browser</th>
-									<th>Visits</th>								
+
+								<thead><tr>
+									<th>Data Item</th>
+									<th>Value</th>
 								</tr></thead>
-						
+
 							<tbody><tr>
-								<td class="description">Firefox</td>
+								<td class="description"><a href="javascript:;">Data Item 1</a></td>
 								<td class="value"><span>1123</span></td>
 							</tr>
 							<tr>
-								<td class="description">Chrome</td>
+								<td class="description"><a href="javascript:;">Data Item 2</a></td>
 								<td class="value"><span>927</span></td>
 							</tr>
 							<tr>
-								<td class="description">Internet Explorer</td>
+								<td class="description"><a href="javascript:;">Data Item 3</a></td>
 								<td class="value"><span>834</span></td>
 							</tr>
 							<tr>
-								<td class="description">Safari</td>
+								<td class="description"><a href="javascript:;">Data Item 4</a></td>
 								<td class="value"><span>625</span></td>
 							</tr>
 							<tr>
-								<td class="description">Opera</td>
+								<td class="description"><a href="javascript:;">Data Item 5</a></td>
 								<td class="value"><span>593</span></td>
 							</tr>
-							
+
 							<tr>
-								<td class="description">Netscape</td>
-								<td class="value"><span>123</span></td>
+								<td class="description"><a href="javascript:;">Data Item 6</a></td>
+								<td class="value"><span>456</span></td>
 							</tr>
 							
 							

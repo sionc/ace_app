@@ -1,5 +1,10 @@
-var chart;
+
 $(document).ready(function() {
+    if ($("#hourly-parts-processed-chart").length == 0)
+        return;
+
+    var chart;
+    var colors = Highcharts.getOptions().colors;
 	chart = new Highcharts.Chart({
 		chart: {
 			renderTo: 'hourly-parts-processed-chart',
@@ -7,22 +12,18 @@ $(document).ready(function() {
             backgroundColor: 'transparent',
             borderColor: 'transparent',
             borderWidth: '1',
-            plotBackgroundColor: 'transparent'
+            plotBackgroundColor: 'transparent',
+            width:500,
+            height:300,
+            credits: {
+                enabled:false
+            }
 		},
 		title: {
 			text: ''
 		},
 		xAxis: {
-			categories: [
-				'1 pm',
-				'2 pm',
-				'3 pm',
-				'4 pm',
-				'5 pm',
-				'6 pm',
-				'7 pm',
-                '8 pm'
-			]
+			categories: ['1-2pm', '2-3pm', '3-4pm', '4-5pm', '5-6pm', '6-7pm', '7-8pm']
 		},
 		yAxis: {
 			min: 0,
@@ -36,8 +37,7 @@ $(document).ready(function() {
         },
 		tooltip: {
 			formatter: function() {
-				return ''+
-					this.x +': '+ this.y +' parts processed';
+				return this.y +' parts processed at ' + this.x;
 			}
 		},
 		plotOptions: {
@@ -48,8 +48,8 @@ $(document).ready(function() {
 		},
 			series: [{
 			name: 'Parts Processed',
-			data: [200, 220, 170, 320, 180, 220, 190, 210],
-            color: '#FFC774'
+			data: [200, 220, 170, 320, 180, 220, 190],
+            color: colors[0]
 
 		}]
 	});

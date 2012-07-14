@@ -1,6 +1,9 @@
 AceApp::Application.routes.draw do
 
+  resources :tests
+
   root :to => 'pages#dashboard'
+  get "/pages/live_data"
   get "/pages/account"
   get "/pages/charts"
   get "/pages/dashboard"
