@@ -1,0 +1,56 @@
+<div class="account-container">
+
+	<div class="content clearfix">
+        <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+		<!--<form action="./" method="post">-->
+
+			<h1>Sign In</h1>
+
+			<div class="login-fields">
+
+				<p>Sign in using your registered account:</p>
+
+				<div class="field">
+					<label for="username">Username:</label>
+				    <%= f.email_field :email, :class => "login username-field", :id => "username", :placeholder=> "Username" %>
+                </div> <!-- /field -->
+
+				<div class="field">
+					<label for="password">Password:</label>
+				    <%= f.password_field :password, :class => "login password-field", :id => "password", :placeholder => "Password"  %>
+                </div> <!-- /password -->
+
+			</div> <!-- /login-fields -->
+
+			<div class="login-actions">
+
+              <% if devise_mapping.rememberable? -%>
+                  <span class="login-checkbox">
+                    <%= f.check_box :remember_me, :class => "field login-checkbox", :id => "Field"%>
+                    <label class="choice" for="Field">Keep me signed in</label>
+                  </span>
+              <% end -%>
+
+              <%= f.submit "Sign in", :class => "button btn btn-warning btn-large" %>
+			</div> <!-- .actions -->
+
+		<!--</form>-->
+        <% end %>
+	</div> <!-- /content -->
+
+</div> <!-- /account-container -->
+
+
+<!-- Text Under Box -->
+<div class="login-extra">
+  <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+    Don't have an account? <%= link_to "Sign up", new_registration_path(resource_name) %><br />
+  <% end -%>
+
+  <%- if devise_mapping.recoverable? && controller_name != 'passwords' %>
+    Forgot your password? <%= link_to "Remind me", new_password_path(resource_name) %><br />
+  <% end -%>
+
+	<!--Don't have an account? <a href="./signup.html">Sign Up</a><br/>-->
+	<!--Remind <a href="#">Password</a>-->
+</div> <!-- /login-extra -->

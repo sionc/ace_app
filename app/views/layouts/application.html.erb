@@ -17,7 +17,9 @@
 <body>
 
 <%= render 'layouts/navbar' %>
-<%= render 'layouts/subnavbar' %>
+<%= if user_signed_in?
+        render 'layouts/subnavbar'
+    end %>
 <div class="main">
   <div class="main-inner">
     <%= yield %>

@@ -1,0 +1,64 @@
+<%= devise_error_messages! %>
+
+<div class="account-container register">
+
+	<div class="content clearfix">
+
+        <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+
+			<h1>Sign Up</h1>
+
+			<div class="login-fields">
+                <p>Create a new account:</p>
+
+				<!--<div class="field">-->
+					<!--<label for="firstname">First Name:</label>-->
+					<!--<input type="text" id="firstname" name="firstname" value="" placeholder="First Name" class="login" />-->
+				<!--</div> &lt;!&ndash; /field &ndash;&gt;-->
+
+				<!--<div class="field">-->
+					<!--<label for="lastname">Last Name:</label>-->
+					<!--<input type="text" id="lastname" name="lastname" value="" placeholder="Last Name" class="login" />-->
+				<!--</div> &lt;!&ndash; /field &ndash;&gt;-->
+
+                <div class="field">
+                   <label for="email">Email Address:</label>
+                   <%= f.email_field :email, :class => "login", :id => "email", :placeholder => "Email" %>
+                </div>
+
+				<div class="field">
+					<label for="password">Password:</label>
+                    <%= f.password_field :password, :class => "login", :id => "password", :placeholder => "Password" %>
+				</div> <!-- /field -->
+
+				<div class="field">
+					<label for="confirm_password">Confirm Password:</label>
+				    <%= f.password_field :password_confirmation, :class => "login", :id => "confirm_password", :placeholder => "Confirm Password" %>
+                </div> <!-- /field -->
+
+			</div> <!-- /login-fields -->
+
+			<div class="login-actions">
+
+				<span class="login-checkbox">
+					<input id="Field" name="Field" type="checkbox" class="field login-checkbox" value="First Choice" tabindex="4" />
+					<label class="choice" for="Field">I have read and agree with the Terms of Use.</label>
+				</span>
+
+                <%= f.submit "Sign up", :class => "button btn btn-primary btn-large"%>
+			</div> <!-- .actions -->
+
+        <% end %>
+	</div> <!-- /content -->
+
+</div> <!-- /account-container -->
+
+
+<!-- Text Under Box -->
+<div class="login-extra">
+	Already have an account? <a href="/users/sign_in">Sign in</a>
+    <br />
+    <%- if devise_mapping.recoverable? && controller_name != 'passwords' %>
+        Forgot your password? <%= link_to "Remind me", new_password_path(resource_name) %><br />
+    <% end -%>
+</div> <!-- /login-extra -->

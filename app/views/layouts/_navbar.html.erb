@@ -14,7 +14,8 @@
         Adept ACE
       </a>
 
-      <div class="nav-collapse">
+      <% if user_signed_in? %>
+        <div class="nav-collapse">
         <ul class="nav pull-right">
           <li class="dropdown">
 
@@ -45,7 +46,8 @@
               <li><a href="javascript:;">My Profile</a></li>
               <li><a href="javascript:;">My Groups</a></li>
               <li class="divider"></li>
-              <li><a href="javascript:;">Logout</a></li>
+              <!--<li><a href="javascript:;">Logout</a></li>-->
+              <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
             </ul>
 
           </li>
@@ -56,8 +58,8 @@
         </form>
 
       </div>
-      <!--/.nav-collapse -->
-
+        <!--/.nav-collapse -->
+      <% end %>
     </div>
     <!-- /container -->
 

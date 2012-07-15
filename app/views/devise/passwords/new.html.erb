@@ -1,0 +1,39 @@
+<%= devise_error_messages! %>
+
+<div class="account-container">
+	<div class="content clearfix">
+       <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
+
+			<h2>Forgot your password?</h2>
+             <br />
+
+			<div class="login-fields">
+
+				<p>We can send you reset password instructions</p>
+
+				<div class="field">
+					<label for="username">Username:</label>
+				    <%= f.email_field :email, :class => "login username-field", :id => "username", :placeholder=> "Username" %>
+                </div> <!-- /field -->
+
+			</div> <!-- /login-fields -->
+
+			<div class="login-actions">
+
+              <%= f.submit "Send instructions", :class => "button btn btn-warning btn-large" %>
+			</div> <!-- .actions -->
+
+		<!--</form>-->
+        <% end %>
+	</div> <!-- /content -->
+
+</div> <!-- /account-container -->
+
+<!-- Text Under Box -->
+<div class="login-extra">
+  <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+    Don't have an account? <%= link_to "Sign up", new_registration_path(resource_name) %><br />
+  <% end -%>
+
+  Already have an account? <a href="/users/sign_in">Sign in</a>
+</div> <!-- /login-extra -->

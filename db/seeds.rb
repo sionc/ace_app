@@ -5,3 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+puts "Deleting tests"
+Test.delete_all
+
+# Demo user
+puts 'Creating test'
+Test.create(:data => '20',
+            :name => 'Random')

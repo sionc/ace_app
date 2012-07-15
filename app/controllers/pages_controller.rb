@@ -3,13 +3,10 @@ class PagesController < ApplicationController
   # Devise
   #
   #before_filter :authenticate_user!, :except => [:start, :about]
+  before_filter :authenticate_user!, :except => [:signup]
 
   # GET "pages/account"
   def account
-  end
-
-  # GET "pages/charts"
-  def charts
   end
 
   # GET "pages/dashboard"
@@ -22,10 +19,6 @@ class PagesController < ApplicationController
 
   # GET "pages/faq"
   def faq
-  end
-
-  # GET "pages/login"
-  def login
   end
 
   # GET "pages/pricing"
