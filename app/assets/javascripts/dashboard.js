@@ -37,7 +37,7 @@ $(document).ready(function() {
         },
 		tooltip: {
 			formatter: function() {
-				return this.y +' parts processed at ' + this.x;
+				return this.y +' parts processed from ' + this.x;
 			}
 		},
 		plotOptions: {

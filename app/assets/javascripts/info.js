@@ -1,4 +1,63 @@
+var posts = [];
 var currentData = 10;
+
+// Setup the Ajax token for Javascript
+var setupAjax = function() {
+    $.ajaxSetup({
+        beforeSend : function(xhr) {
+            xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'));
+	  }
+    });
+};
+
+var createPost = function(comment, owner) {
+    $.ajax({
+        type: 'POST',
+        url: '/posts',
+        data:{post:{comment:comment, owner:owner}},
+        dataType: 'json',
+        timeout:20000,
+        async:false
+    }).done(updatePosts(comment, owner));
+};
+
+var getPosts = function() {
+    $.ajax({
+        type: 'GET',
+        url: '/posts',
+        dataType: 'json',
+        timeout:20000,
+        success: parsePosts
+    });
+};
+
+var parsePosts = function(postData) {
+    var numPosts = postData.posts.length;
+    var i = 0;
+    for (i = 0; i < numPosts; i++) {
+        var postObj = jQuery.parseJSON(JSON.stringify(postData.posts[i]));
+        posts.push(postObj);
+    }
+
+    initializePosts();
+};
+
+var initializePosts = function() {
+    var i = 0;
+    for (i = 0; i < posts.length; i++) {
+        var comment = posts[i].comment;
+        var owner = posts[i].owner;
+        updatePosts(comment, owner);
+    }
+};
+
+var updatePosts = function(comment, owner) {
+    var commentsContainer =  "#comments-container";
+    if($(commentsContainer).length == 0)
+        return;
+
+    $("<blockquote><p>"+comment+"</p><small>"+owner+"</small></blockquote>").appendTo(commentsContainer);
+};
 
 // Get test data
 var getTestData = function() {
@@ -48,7 +107,7 @@ var initializeTestDataChart = function() {
             enabled:false
         },
 		title: {
-			text: 'Live data from ACE'
+			text: ''
 		},
 		xAxis: {
 			type: 'datetime',
@@ -97,9 +156,23 @@ var initializeTestDataChart = function() {
 	});
 };
 
-$(function() {
-     if ($("#live-data-chart-container").length == 0)
+$(function(){
+   setupAjax();
+   getPosts();
+
+   if ($("#share-feedback").length == 0)
         return;
 
-    initializeTestDataChart();
+   $("#comment-textarea").val('');
+   $("#share-feedback").click( function(){
+       var comment = $("#comment-textarea").val();
+       var owner = "Sion";
+       createPost(comment, owner);
+       $("#comment-textarea").val('');
+   });
+
+   if ($("#live-data-chart-container").length == 0)
+        return;
+
+   initializeTestDataChart();
 });

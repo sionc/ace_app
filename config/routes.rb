@@ -1,9 +1,10 @@
 AceApp::Application.routes.draw do
 
+  resources :posts
+
   resources :tests
 
   root :to => 'pages#dashboard'
-  get "/pages/live_data"
   get "/pages/account"
   get "/pages/charts"
   get "/pages/dashboard"
@@ -14,6 +15,7 @@ AceApp::Application.routes.draw do
   get "/pages/reports"
   get "/pages/signup"
   get "/pages/workspace"
+  get "/pages/info"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

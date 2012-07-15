@@ -44,6 +44,10 @@ class PagesController < ApplicationController
   def workspace
   end
 
+  # GET "pages/info"
+  def info
+  end
+
   #def start
   #  respond_to do |format|
   #    if user_signed_in?
