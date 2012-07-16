@@ -206,32 +206,41 @@ var displayProductDistributionChart = function() {
 };
 
 var displayProductFlowChart = function() {
-      if ($("#product-flow-chart").length == 0)
-            return;
+    if ($("#product-flow-chart").length == 0)
+        return;
 
     var seriesOptions = [],
         yAxisOptions = [],
         seriesCounter = 0,
-        names = ['MSFT', 'AAPL', 'GOOG'],
+        names = ['Average Parts Per Minute', 'Average Targets Per Minute', 'Average Infeed Parts Per Minute'],
         colors = Highcharts.getOptions().colors;
 
     $.each(names, function(i, name) {
+        var d = Date.UTC(2006,6,6);
+        var millisecondsInADay =  1000 * 60 * 60 * 24;
+        var data = [];
+        var dataItem = [];
+        var j = 0;
 
-        $.getJSON('http://www.highcharts.com/samples/data/jsonp.php?filename=' + name.toLowerCase() + '-c.json&callback=?', function(data) {
+        for (j = 0; j < (365 * 6); j++) {
+            dataItem = [];
+            dataItem[0] = d + j * millisecondsInADay;
+            dataItem[1] = 180 + parseInt(Math.floor(Math.random()*20));
+            data.push(dataItem);
+        }
 
-            seriesOptions[i] = {
-                name: name,
-                data: data
-            };
+        seriesOptions[i] = {
+            name: name,
+            data: data
+        };
 
-            // As we're loading the data asynchronously, we don't know what order it will arrive. So
-            // we keep a counter and create the chart when all the data is loaded.
-            seriesCounter++;
+        // As we're loading the data asynchronously, we don't know what order it will arrive. So
+        // we keep a counter and create the chart when all the data is loaded.
+        seriesCounter++;
 
-            if (seriesCounter == names.length) {
-                createChart();
-            }
-        });
+        if (seriesCounter == names.length) {
+            createChart();
+        }
     });
 
 
@@ -242,8 +251,12 @@ var displayProductFlowChart = function() {
                 renderTo: 'product-flow-chart'
             },
 
+            credits: {
+                enabled:false
+            },
+
             rangeSelector: {
-                selected: 4
+                selected: 1
             },
 
             yAxis: {

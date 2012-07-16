@@ -5,9 +5,9 @@
     <div class="widget">
 
       <div class="widget-header">
-        <i class="icon-th"></i>
+        <i class="icon-info-sign"></i>
 
-        <h3>Info</h3>
+        <h3>About</h3>
       </div>
       <!-- /widget-header -->
 
@@ -16,19 +16,19 @@
           <tbody>
           <tr>
             <td class="description">Workspace Path</td>
-            <td class="value"><span>/SmartControllers/Controller1</span></td>
+            <td class="value"><span><strong>/SmartControllers/Controller</strong></span></td>
           </tr>
           <tr>
             <td class="description">Version</td>
-            <td class="value"><span>17.1 D3</span></td>
+            <td class="value"><span><strong>17.1 D3</strong></span></td>
           </tr>
           <tr>
             <td class="description">IP Address</td>
-            <td class="value"><span>172.21.3.150</span></td>
+            <td class="value"><span><strong>172.21.3.150</strong></span></td>
           </tr>
           <tr>
             <td class="description">Host Address</td>
-            <td class="value"><span>172.21.3.207</span></td>
+            <td class="value"><span><strong>172.21.3.207</strong></span></td>
           </tr>
           </tbody>
         </table>
@@ -52,19 +52,19 @@
           <tbody>
           <tr>
             <td class="description">Auto-Start</td>
-            <td class="value"><span>False</span></td>
+            <td class="value"><span><strong>False</strong></span></td>
           </tr>
           <tr>
             <td class="description">Default Speed</td>
-            <td class="value"><span>50</span></td>
+            <td class="value"><span><strong>50</strong></span></td>
           </tr>
           <tr>
             <td class="description">Monitor Speed</td>
-            <td class="value"><span>100</span></td>
+            <td class="value"><span><strong>100</strong></span></td>
           </tr>
           <tr>
             <td class="description">Power Timeout</td>
-            <td class="value"><span>10</span></td>
+            <td class="value"><span><strong>10</strong></span></td>
           </tr>
           </tbody>
         </table>
@@ -80,7 +80,7 @@
     <div class="widget">
 
       <div class="widget-header">
-        <i class="icon-share"></i>
+        <i class="icon-envelope"></i>
 
         <h3>Commands</h3>
       </div>
@@ -89,12 +89,14 @@
       <div class="widget-content">
         <form class="form-inline">
           <input type="text" class="input-large" placeholder="Monitor Command">
-          <button type="submit" class="btn btn-primary"><i class="icon-share"></i>&nbsp Send</button>
+          <button type="submit" class="btn btn-primary"><i class="icon-envelope"></i>&nbsp Send</button>
         </form>
             <pre class="pre-scrollable">
-              <ol class="linenums">
-                <li class="L0"><span class="tag"></span></li>
-              </ol>
+.lists
+$fw.gtype[0] "Empty"
+$fw.gtype[1] "Node information"
+$fw.gtype[2] "Axis"
+$fw.gtype[3] "Digital input"
             </pre>
       </div>
       <!-- /widget-content -->
@@ -111,49 +113,33 @@
       <!-- /widget-header -->
 
       <div class="widget-content">
-        <div class="content">
-          <div class="row-fluid">
-            <div class="span9">
-              <form class="form-inline">
-                <input type="text" class="input-large" placeholder="Program Name">
-                <button type="submit" class="btn btn-primary"><i class="icon-file"></i>&nbsp Save</button>
-              </form>
-            </div>
-            <div class="span3">
-
-                <div class="btn-group">
-                  <button class="btn"><i class="icon-play"></i></button>
-                  <button class="btn"><i class="icon-stop"></i></button>
-                  <button class="btn"><i class="icon-pause"></i></button>
-                </div>
-
-            </div>
+        <div class="row-fluid">
+          <div class="span9">
+            <form class="form-inline">
+              <input type="text" class="input-large" placeholder="Program Name">
+              <button type="submit" class="btn btn-primary"><i class="icon-file"></i>&nbsp Save</button>
+            </form>
           </div>
+          <div class="span3">
 
+            <div class="btn-group">
+              <button class="btn"><i class="icon-play"></i></button>
+              <button class="btn"><i class="icon-stop"></i></button>
+              <button class="btn"><i class="icon-pause"></i></button>
+            </div>
+
+          </div>
+        </div>
 
            <pre class="pre-scrollable">
-            <ol class="linenums">
-              <li class="L0"><span class="tag">&lt;table&gt;</span></li>
-              <li class="L0"><span class="pln">    </span><span class="tag">&lt;/tr&gt;</span></li>
-              <li class="L0"><span class="pln">  </span><span class="tag">&lt;/tbody&gt;</span></li>
-              <li class="L0"><span class="tag">&lt;/table&gt;</span></li>
-              <li class="L0"><span class="tag">&lt;table&gt;</span></li>
-              <li class="L0"><span class="pln">    </span><span class="tag">&lt;/tr&gt;</span></li>
-              <li class="L0"><span class="pln">  </span><span class="tag">&lt;/tbody&gt;</span></li>
-              <li class="L0"><span class="tag">&lt;/table&gt;</span></li>
-              <li class="L0"><span class="tag">&lt;table&gt;</span></li>
-              <li class="L0"><span class="pln">    </span><span class="tag">&lt;/tr&gt;</span></li>
-              <li class="L0"><span class="pln">  </span><span class="tag">&lt;/tbody&gt;</span></li>
-              <li class="L0"><span class="tag">&lt;/table&gt;</span></li>
-              <li class="L0"><span class="tag">&lt;table&gt;</span></li>
-              <li class="L0"><span class="pln">    </span><span class="tag">&lt;/tr&gt;</span></li>
-              <li class="L0"><span class="pln">  </span><span class="tag">&lt;/tbody&gt;</span></li>
-              <li class="L0"><span class="tag">&lt;/table&gt;</span></li>
-            </ol>
+.PROGRAM a.test()
+    WHILE TRUE DO
+        TYPE "This is V+ Program"
+    END
+.END
            </pre>
-          <!---->
+        <!---->
 
-        </div>
       </div>
       <!-- /widget-content -->
 

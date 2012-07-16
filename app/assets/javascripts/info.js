@@ -158,15 +158,16 @@ var initializeTestDataChart = function() {
 
 $(function(){
    setupAjax();
-   getPosts();
 
    if ($("#share-feedback").length == 0)
         return;
 
+   getPosts();
+
    $("#comment-textarea").val('');
    $("#share-feedback").click( function(){
        var comment = $("#comment-textarea").val();
-       var owner = "Sion";
+       var owner = "Adept ACE User";
        createPost(comment, owner);
        $("#comment-textarea").val('');
    });

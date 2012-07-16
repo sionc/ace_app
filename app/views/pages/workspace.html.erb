@@ -1,10 +1,9 @@
 <div id="workspace-container" class="container">
   <ul class="nav nav-tabs" id="myTab">
-    <li class="dropdown">
+    <li class="dropdown active">
       <a href="" class="dropdown-toggle" data-toggle="dropdown">Recipes <b class="caret"></b></a>
       <ul class="dropdown-menu">
-        <li><a href="#recipe1" data-toggle="tab">Recipe 1</a></li>
-        <li><a href="#recipe2" data-toggle="tab">Recipe 2</a></li>
+        <li class="active"><a href="#recipe_manager" data-toggle="tab">Recipe Manager</a></li>
       </ul>
     </li>
     <li class="dropdown">
@@ -24,15 +23,10 @@
   </ul>
 
   <div class="tab-content">
-    <div class="tab-pane active" id="recipe1">
-      <h3>Recipe 1</h3>
+    <div class="tab-pane active" id="recipe_manager">
+      <h3>Recipe Manager</h3>
       <br />
-      <%= render 'recipe' %>
-    </div>
-    <div class="tab-pane" id="recipe2">
-      <h3>Recipe 2</h3>
-      <br />
-      <%= render 'recipe' %>
+      <%= render 'recipe_manager' %>
     </div>
     <div class="tab-pane" id="controller1">
       <h3>Controller 1</h3>

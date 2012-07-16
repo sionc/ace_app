@@ -21,57 +21,43 @@ $(function() {
       $("#home_tab").removeClass("active");
       $("#workspace_tab").addClass("active");
       $("#reports_tab").removeClass("active");
-      $("#robotracker_tab").removeClass("active");
-      $("#community_tab").removeClass("active");
-      $("#faq_tab").removeClass("active");
+      $("#products_tab").removeClass("active");
+      $("#info_tab").removeClass("active");
       $("#pricing_tab").removeClass("active");
     } else if (pathname == "/pages/reports") {
       $("#home_tab").removeClass("active");
       $("#workspace_tab").removeClass("active");
       $("#reports_tab").addClass("active");
-      $("#robotracker_tab").removeClass("active");
-      $("#community_tab").removeClass("active");
-      $("#faq_tab").removeClass("active");
+      $("#products_tab").removeClass("active");
+      $("#info_tab").removeClass("active");
       $("#pricing_tab").removeClass("active");
-    } else if (pathname == "/pages/robotracker") {
+    } else if (pathname == "/pages/products") {
       $("#home_tab").removeClass("active");
       $("#workspace_tab").removeClass("active");
       $("#reports_tab").removeClass("active");
-      $("#robotracker_tab").addClass("active");
-      $("#community_tab").removeClass("active");
-      $("#faq_tab").removeClass("active");
+      $("#products_tab").addClass("active");
+      $("#info_tab").removeClass("active");
       $("#pricing_tab").removeClass("active");
-    } else if (pathname == "/pages/community") {
+    } else if (pathname == "/pages/info") {
       $("#home_tab").removeClass("active");
       $("#workspace_tab").removeClass("active");
       $("#reports_tab").removeClass("active");
-      $("#robotracker_tab").removeClass("active");
-      $("#community_tab").addClass("active");
-      $("#faq_tab").removeClass("active");
-      $("#pricing_tab").removeClass("active");
-    } else if (pathname == "/pages/faq") {
-      $("#home_tab").removeClass("active");
-      $("#workspace_tab").removeClass("active");
-      $("#reports_tab").removeClass("active");
-      $("#robotracker_tab").removeClass("active");
-      $("#community_tab").removeClass("active");
-      $("#faq_tab").addClass("active");
+      $("#products_tab").removeClass("active");
+      $("#info_tab").addClass("active");
       $("#pricing_tab").removeClass("active");
     } else if (pathname == "/pages/pricing") {
       $("#home_tab").removeClass("active");
       $("#workspace_tab").removeClass("active");
       $("#reports_tab").removeClass("active");
-      $("#robotracker_tab").removeClass("active");
-      $("#community_tab").removeClass("active");
-      $("#faq_tab").removeClass("active");
+      $("#products_tab").removeClass("active");
+      $("#info_tab").removeClass("active");
       $("#pricing_tab").addClass("active");
     } else {
       $("#home_tab").addClass("active");
       $("#workspace_tab").removeClass("active");
       $("#reports_tab").removeClass("active");
-      $("#robotracker_tab").removeClass("active");
-      $("#community_tab").removeClass("active");
-      $("#faq_tab").removeClass("active");
+      $("#products_tab").removeClass("active");
+      $("#info_tab").removeClass("active");
       $("#pricing_tab").removeClass("active");
     }
 });
