@@ -66,10 +66,10 @@
         <div class="widget-content">
           <div>
             <p id="current-user"> Hi
-              <% if current_user.first_name.nil? || current_user.first_name == "" %>
-                  <%= current_user.email %>
+              <% if current_user.first_name.nil? %>
+                  <%= current_user.email + "," %>
               <% else %>
-                  <%= current_user.first_name + " " + current_user.last_name[0]+ "," %>
+                  <%= current_user.first_name + "," %>
               <% end %>
             </p>
             <p>Do you think this product will be useful for Adept?</p>

@@ -41,7 +41,16 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
-    owner = current_user.first_name + " " + current_user.last_name[0]
+    if(user_signed_in?)
+      if (current_user.first_name.nil? || current_user.last_name.nil? || current_user.last_name.length < 1)
+        owner = current_user.email
+      else
+        owner = current_user.first_name + " " + current_user.last_name[0]
+      end
+    else
+      owner = "ACE User"
+    end
+
     @post = Post.new(:comment => params[:post][:comment], :owner => owner)
 
     respond_to do |format|
