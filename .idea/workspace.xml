@@ -68,24 +68,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="info.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/info.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="27" selection-start="817" selection-end="817" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="20120717052959_rename_owner_in_posts.rb" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/db/migrate/20120717052959_rename_owner_in_posts.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="2" selection-start="53" selection-end="53" vertical-scroll-proportion="0.028142588">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="20120717045413_change_comment_data_type_for_posts.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/db/migrate/20120717045413_change_comment_data_type_for_posts.rb">
           <provider selected="true" editor-type-id="text-editor">
@@ -95,19 +77,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="info.html.erb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="info.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/pages/info.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="84" column="10" selection-start="2952" selection-end="2952" vertical-scroll-proportion="-17.5">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="home.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../sager_app/app/assets/javascripts/home.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="359" column="17" selection-start="11788" selection-end="11867" vertical-scroll-proportion="0.0">
+            <state line="54" column="22" selection-start="1995" selection-end="1995" vertical-scroll-proportion="0.38251367">
               <folding />
             </state>
           </provider>
@@ -136,9 +109,9 @@
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/models/post.rb" />
         <option value="$PROJECT_DIR$/app/models/user.rb" />
-        <option value="$PROJECT_DIR$/app/views/pages/info.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/posts_controller.rb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/info.js" />
+        <option value="$PROJECT_DIR$/app/views/pages/info.html.erb" />
       </list>
     </option>
   </component>
@@ -763,23 +736,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/workspace.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../sager_app/app/assets/javascripts/dashboard.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-5.2041883">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/pages/info.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="84" column="10" selection-start="2952" selection-end="2952" vertical-scroll-proportion="-17.5">
           <folding />
         </state>
       </provider>
@@ -798,13 +757,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/info.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="27" selection-start="817" selection-end="817" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20120717045413_change_comment_data_type_for_posts.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="41" selection-start="75" selection-end="112" vertical-scroll-proportion="0.0">
@@ -812,9 +764,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20120717052959_rename_owner_in_posts.rb">
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/info.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="2" selection-start="53" selection-end="53" vertical-scroll-proportion="0.028142588">
+        <state line="33" column="27" selection-start="817" selection-end="817" vertical-scroll-proportion="0.62827224">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/workspace.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/pages/info.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="54" column="22" selection-start="1995" selection-end="1995" vertical-scroll-proportion="0.38251367">
           <folding />
         </state>
       </provider>
