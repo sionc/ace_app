@@ -65,6 +65,13 @@
 
         <div class="widget-content">
           <div>
+            <p id="current-user">
+              <% if current_user.first_name.nil? || current_user.first_name == "" %>
+                  <%= current_user.email %>
+              <% else %>
+                  <%= current_user.first_name + " " + current_user.last_name[0]+ "," %>
+              <% end %>
+            </p>
             <p>Do you think this product will be useful for Adept?</p>
             <textarea rows="4" id="comment-textarea" class="input-xlarge"></textarea>
             <br />
@@ -74,9 +81,10 @@
           </div>
           <br/>
 
+          <h6>Comments</h6>
+          <br />
           <div id="comments-container">
-            <h6>Comments</h6>
-            <br />
+
           </div>
         </div>
         <!-- /widget-content -->

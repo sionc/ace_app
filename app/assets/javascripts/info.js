@@ -10,15 +10,19 @@ var setupAjax = function() {
     });
 };
 
-var createPost = function(comment, owner) {
+var createPost = function(comment) {
     $.ajax({
         type: 'POST',
         url: '/posts',
-        data:{post:{comment:comment, owner:owner}},
+        data:{post:{comment:comment}},
         dataType: 'json',
         timeout:20000,
-        async:false
-    }).done(updatePosts(comment, owner));
+        async:false,
+        success: function(data) {
+           var postObj = jQuery.parseJSON(JSON.stringify(data));
+           updatePosts(postObj.comment, postObj.owner);
+        }
+    });
 };
 
 var getPosts = function() {
@@ -44,6 +48,7 @@ var parsePosts = function(postData) {
 
 var initializePosts = function() {
     var i = 0;
+
     for (i = 0; i < posts.length; i++) {
         var comment = posts[i].comment;
         var owner = posts[i].owner;
@@ -167,8 +172,7 @@ $(function(){
    $("#comment-textarea").val('');
    $("#share-feedback").click( function(){
        var comment = $("#comment-textarea").val();
-       var owner = "Adept ACE User";
-       createPost(comment, owner);
+       createPost(comment);
        $("#comment-textarea").val('');
    });
 

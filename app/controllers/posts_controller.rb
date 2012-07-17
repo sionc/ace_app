@@ -41,7 +41,8 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
-    @post = Post.new(params[:post])
+    owner = current_user.first_name + " " + current_user.last_name[0]
+    @post = Post.new(:comment => params[:post][:comment], :owner => owner)
 
     respond_to do |format|
       if @post.save

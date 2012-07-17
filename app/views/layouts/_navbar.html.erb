@@ -38,7 +38,11 @@
 
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="icon-user"></i>
-              <% current_user.first_name %>
+              <% if current_user.first_name.nil? || current_user.first_name == "" %>
+                <%= current_user.email %>
+              <% else %>
+                 <%= current_user.first_name %>
+              <% end  %>
               <b class="caret"></b>
             </a>
 
