@@ -25,8 +25,11 @@
     <%= yield %>
   </div>
 </div>
-<%= render 'layouts/extra' %>
-<%= render 'layouts/footer' %>
+
+<% if user_signed_in? %>
+    <%= render 'layouts/extra' %>
+    <%= render 'layouts/footer' %>
+<% end %>
 
 </body>
 </html>
