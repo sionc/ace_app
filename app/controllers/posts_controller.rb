@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    @posts = Post.all.sort_by &:created_at
 
     respond_to do |format|
       format.html # index.html.erb
