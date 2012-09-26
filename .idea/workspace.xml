@@ -68,10 +68,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Gemfile" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Gemfile" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Gemfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="25" selection-start="188" selection-end="210" vertical-scroll-proportion="0.28795812">
+            <state line="8" column="1" selection-start="163" selection-end="163" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="1" selection-start="430" selection-end="430" vertical-scroll-proportion="0.39267015">
               <folding />
             </state>
           </provider>
@@ -119,8 +128,8 @@
         <option value="$PROJECT_DIR$/app/controllers/posts_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/pages/dashboard.html.erb" />
         <option value="$PROJECT_DIR$/readme.rdoc" />
-        <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/config/database.yml" />
+        <option value="$PROJECT_DIR$/Gemfile" />
       </list>
     </option>
   </component>
@@ -511,11 +520,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../sager_app/app/assets/javascripts/dashboard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-5.2041883" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../sager_app/app/assets/javascripts/home.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="359" column="17" selection-start="11788" selection-end="11867" vertical-scroll-proportion="0.0" />
@@ -594,7 +598,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="25" selection-start="188" selection-end="210" vertical-scroll-proportion="0.28795812">
+        <state line="8" column="1" selection-start="163" selection-end="163" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="1" selection-start="430" selection-end="430" vertical-scroll-proportion="0.39267015">
           <folding />
         </state>
       </provider>
