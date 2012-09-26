@@ -3,4 +3,7 @@ Process Manager Statistics Demo for PackExpo
 This rails app demonstrates the data archival, retrieval and visualization capabilities of Adept ACE. 
 Please note that this is a prototype developed for PackExpo 2012.
 
-* Copyright (c) 2012 by Adept Technology, Inc.
+Development notes:
+Ruby version: ruby-1.9.7-p194
+
+&c Copyright (c) 2012 by Adept Technology, Inc.
