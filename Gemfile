@@ -42,3 +42,8 @@ gem 'devise'
 
 # To use debugger
 # gem 'debugger'
+
+# Compatibility issues with Ubuntu
+# Need a javascript runtime library
+gem 'execjs'
+gem 'therubyracer'
