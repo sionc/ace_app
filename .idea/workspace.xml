@@ -68,10 +68,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Gemfile" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Gemfile" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Gemfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="49" column="0" selection-start="960" selection-end="960" vertical-scroll-proportion="1.2356021">
+            <state line="6" column="38" selection-start="140" selection-end="140" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -86,10 +86,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="database.yml" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="database.yml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config/database.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="16" selection-start="633" selection-end="633" vertical-scroll-proportion="0.0">
+            <state line="94" column="0" selection-start="2147" selection-end="2147" vertical-scroll-proportion="0.8429319">
               <folding />
             </state>
           </provider>
@@ -128,8 +128,8 @@
         <option value="$PROJECT_DIR$/app/controllers/posts_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/pages/dashboard.html.erb" />
         <option value="$PROJECT_DIR$/readme.rdoc" />
-        <option value="$PROJECT_DIR$/config/database.yml" />
         <option value="$PROJECT_DIR$/Gemfile" />
+        <option value="$PROJECT_DIR$/config/database.yml" />
       </list>
     </option>
   </component>
@@ -589,13 +589,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/database.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="16" selection-start="633" selection-end="633" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="1" selection-start="430" selection-end="430" vertical-scroll-proportion="0.0">
@@ -605,7 +598,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="0" selection-start="960" selection-end="960" vertical-scroll-proportion="1.2356021">
+        <state line="6" column="38" selection-start="140" selection-end="140" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/database.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="94" column="0" selection-start="2147" selection-end="2147" vertical-scroll-proportion="0.8429319">
           <folding />
         </state>
       </provider>

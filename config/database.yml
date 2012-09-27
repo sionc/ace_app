@@ -85,11 +85,11 @@ test:
 #  password:
 
 # Adapter settings for mysql
-test:
+production:
   adapter: mysql2
   encoding: utf8
   database: ace_app_test
   username: ace_app_user
   password: robots
-#  host: localhost
-#  port: 80
+  host: localhost
+  port: 80
