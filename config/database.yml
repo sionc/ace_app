@@ -88,7 +88,7 @@ test:
 production:
   adapter: mysql2
   encoding: utf8
-  database: ace_app_test
+  database: ace_app_production
   username: ace_app_user
   password: robots
   host: localhost

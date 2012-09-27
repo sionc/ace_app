@@ -89,7 +89,16 @@
       <file leaf-file-name="database.yml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config/database.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="94" column="0" selection-start="2147" selection-end="2147" vertical-scroll-proportion="0.8429319">
+            <state line="88" column="48" selection-start="2042" selection-end="2042" vertical-scroll-proportion="0.68586385">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/application.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="72" column="84" selection-start="3323" selection-end="3323" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -114,7 +123,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/views/layouts/_navbar.html.erb" />
         <option value="$PROJECT_DIR$/db/migrate/20120717052702_rename_owner_column_in_posts.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20120717052959_rename_owner_in_posts.rb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
@@ -129,6 +137,7 @@
         <option value="$PROJECT_DIR$/app/views/pages/dashboard.html.erb" />
         <option value="$PROJECT_DIR$/readme.rdoc" />
         <option value="$PROJECT_DIR$/Gemfile" />
+        <option value="$PROJECT_DIR$/config/application.rb" />
         <option value="$PROJECT_DIR$/config/database.yml" />
       </list>
     </option>
@@ -520,11 +529,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../sager_app/app/assets/javascripts/home.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="359" column="17" selection-start="11788" selection-end="11867" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20120717045413_change_comment_data_type_for_posts.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="41" selection-start="75" selection-end="112" vertical-scroll-proportion="0.0" />
@@ -603,9 +607,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/config/application.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="72" column="84" selection-start="3323" selection-end="3323" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/config/database.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="94" column="0" selection-start="2147" selection-end="2147" vertical-scroll-proportion="0.8429319">
+        <state line="88" column="48" selection-start="2042" selection-end="2042" vertical-scroll-proportion="0.68586385">
           <folding />
         </state>
       </provider>
