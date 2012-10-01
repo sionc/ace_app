@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Data item:</b>
+  <%= @data_item_value.data_item_id %>
+</p>
+
+<p>
+  <b>Current value:</b>
+  <%= @data_item_value.current_value %>
+</p>
+
+
+<%= link_to 'Edit', edit_data_item_value_path(@data_item_value) %> |
+<%= link_to 'Back', data_item_values_path %>

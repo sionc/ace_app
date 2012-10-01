@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Process manager:</b>
+  <%= @statistics_source.process_manager_id %>
+</p>
+
+<p>
+  <b>Statistics source type:</b>
+  <%= @statistics_source.statistics_source_type_id %>
+</p>
+
+<p>
+  <b>Source path:</b>
+  <%= @statistics_source.source_path %>
+</p>
+
+
+<%= link_to 'Edit', edit_statistics_source_path(@statistics_source) %> |
+<%= link_to 'Back', statistics_sources_path %>

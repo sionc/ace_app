@@ -1,0 +1,23 @@
+<h1>Listing process_managers</h1>
+
+<table>
+  <tr>
+    <th>Workspace path</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @process_managers.each do |process_manager| %>
+  <tr>
+    <td><%= process_manager.workspace_path %></td>
+    <td><%= link_to 'Show', process_manager %></td>
+    <td><%= link_to 'Edit', edit_process_manager_path(process_manager) %></td>
+    <td><%= link_to 'Destroy', process_manager, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Process manager', new_process_manager_path %>

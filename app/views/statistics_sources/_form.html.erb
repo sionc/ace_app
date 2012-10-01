@@ -1,0 +1,29 @@
+<%= form_for(@statistics_source) do |f| %>
+  <% if @statistics_source.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@statistics_source.errors.count, "error") %> prohibited this statistics_source from being saved:</h2>
+
+      <ul>
+      <% @statistics_source.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :process_manager_id %><br />
+    <%= f.number_field :process_manager_id %>
+  </div>
+  <div class="field">
+    <%= f.label :statistics_source_type_id %><br />
+    <%= f.number_field :statistics_source_type_id %>
+  </div>
+  <div class="field">
+    <%= f.label :source_path %><br />
+    <%= f.text_field :source_path %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

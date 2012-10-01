@@ -1,0 +1,27 @@
+<h1>Listing data_item_types</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Unit</th>
+    <th>Default value</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @data_item_types.each do |data_item_type| %>
+  <tr>
+    <td><%= data_item_type.name %></td>
+    <td><%= data_item_type.unit %></td>
+    <td><%= data_item_type.default_value %></td>
+    <td><%= link_to 'Show', data_item_type %></td>
+    <td><%= link_to 'Edit', edit_data_item_type_path(data_item_type) %></td>
+    <td><%= link_to 'Destroy', data_item_type, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Data item type', new_data_item_type_path %>

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  process_manager_id: 1
+  statistics_source_type_id: 1
+  source_path: MyString
+
+two:
+  process_manager_id: 1
+  statistics_source_type_id: 1
+  source_path: MyString

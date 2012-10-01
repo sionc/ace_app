@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  data_item_id: 1
+  current_value: 1.5
+
+two:
+  data_item_id: 1
+  current_value: 1.5

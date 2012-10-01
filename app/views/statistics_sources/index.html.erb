@@ -1,0 +1,27 @@
+<h1>Listing statistics_sources</h1>
+
+<table>
+  <tr>
+    <th>Process manager</th>
+    <th>Statistics source type</th>
+    <th>Source path</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @statistics_sources.each do |statistics_source| %>
+  <tr>
+    <td><%= statistics_source.process_manager_id %></td>
+    <td><%= statistics_source.statistics_source_type_id %></td>
+    <td><%= statistics_source.source_path %></td>
+    <td><%= link_to 'Show', statistics_source %></td>
+    <td><%= link_to 'Edit', edit_statistics_source_path(statistics_source) %></td>
+    <td><%= link_to 'Destroy', statistics_source, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Statistics source', new_statistics_source_path %>

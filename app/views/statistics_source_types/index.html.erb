@@ -1,0 +1,23 @@
+<h1>Listing statistics_source_types</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @statistics_source_types.each do |statistics_source_type| %>
+  <tr>
+    <td><%= statistics_source_type.name %></td>
+    <td><%= link_to 'Show', statistics_source_type %></td>
+    <td><%= link_to 'Edit', edit_statistics_source_type_path(statistics_source_type) %></td>
+    <td><%= link_to 'Destroy', statistics_source_type, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Statistics source type', new_statistics_source_type_path %>

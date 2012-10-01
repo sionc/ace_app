@@ -1,5 +1,17 @@
 AceApp::Application.routes.draw do
 
+  resources :data_item_values
+
+  resources :data_items
+
+  resources :data_item_types
+
+  resources :statistics_sources
+
+  resources :statistics_source_types
+
+  resources :process_managers
+
   devise_for :users
 
   resources :posts

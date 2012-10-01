@@ -11,13 +11,55 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120717045413) do
+ActiveRecord::Schema.define(:version => 20121001182947) do
+
+  create_table "data_item_types", :force => true do |t|
+    t.string   "name"
+    t.string   "unit"
+    t.float    "default_value"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  create_table "data_item_values", :force => true do |t|
+    t.integer  "data_item_id"
+    t.float    "current_value"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  create_table "data_items", :force => true do |t|
+    t.integer  "data_item_type_id"
+    t.integer  "statistics_source_id"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+  end
 
   create_table "posts", :force => true do |t|
     t.text     "comment"
     t.string   "owner"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "process_managers", :force => true do |t|
+    t.string   "workspace_path"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  create_table "statistics_source_types", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "statistics_sources", :force => true do |t|
+    t.integer  "process_manager_id"
+    t.integer  "statistics_source_type_id"
+    t.string   "source_path"
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
   end
 
   create_table "tests", :force => true do |t|

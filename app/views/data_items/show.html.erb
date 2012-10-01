@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Data item type:</b>
+  <%= @data_item.data_item_type_id %>
+</p>
+
+<p>
+  <b>Statistics source:</b>
+  <%= @data_item.statistics_source_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_data_item_path(@data_item) %> |
+<%= link_to 'Back', data_items_path %>
