@@ -50,7 +50,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="20121012185215_add_statistics_entry_id_to_data_item_value.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="20121012185215_add_statistics_entry_id_to_data_item_value.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/db/migrate/20121012185215_add_statistics_entry_id_to_data_item_value.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -59,10 +59,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="schema.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/schema.rb">
+      <file leaf-file-name="20121012190747_add_time_stamp_to_statistics_entry.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/db/migrate/20121012190747_add_time_stamp_to_statistics_entry.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="schema.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/db/schema.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-1.02">
               <folding />
             </state>
           </provider>
@@ -72,15 +81,6 @@
         <entry file="file://$PROJECT_DIR$/app/models/statistics_entry.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state line="4" column="28" selection-start="140" selection-end="140" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="statistics_source.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/statistics_source.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="12" selection-start="205" selection-end="205" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -547,11 +547,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/config/application.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="72" column="84" selection-start="3323" selection-end="3323" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20120717045413_change_comment_data_type_for_posts.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="20" selection-start="64" selection-end="180" vertical-scroll-proportion="0.0">
@@ -607,13 +602,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/schema.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/statistics_entry.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="28" selection-start="140" selection-end="140" vertical-scroll-proportion="0.0">
@@ -645,6 +633,20 @@
     <entry file="file://$PROJECT_DIR$/db/migrate/20121012185215_add_statistics_entry_id_to_data_item_value.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20121012190747_add_time_stamp_to_statistics_entry.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/schema.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-1.02">
           <folding />
         </state>
       </provider>
