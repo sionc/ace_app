@@ -1,5 +1,7 @@
 AceApp::Application.routes.draw do
 
+  resources :statistics_entries
+
   resources :data_item_values
 
   resources :data_items

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121001182947) do
+ActiveRecord::Schema.define(:version => 20121012182650) do
 
   create_table "data_item_types", :force => true do |t|
     t.string   "name"
@@ -46,6 +46,12 @@ ActiveRecord::Schema.define(:version => 20121001182947) do
     t.string   "workspace_path"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
+  end
+
+  create_table "statistics_entries", :force => true do |t|
+    t.integer  "process_manager_id"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
   end
 
   create_table "statistics_source_types", :force => true do |t|

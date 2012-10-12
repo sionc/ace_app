@@ -1,0 +1,23 @@
+<h1>Listing statistics_entries</h1>
+
+<table>
+  <tr>
+    <th>Process manager</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @statistics_entries.each do |statistics_entry| %>
+  <tr>
+    <td><%= statistics_entry.process_manager_id %></td>
+    <td><%= link_to 'Show', statistics_entry %></td>
+    <td><%= link_to 'Edit', edit_statistics_entry_path(statistics_entry) %></td>
+    <td><%= link_to 'Destroy', statistics_entry, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Statistics entry', new_statistics_entry_path %>
