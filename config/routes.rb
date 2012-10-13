@@ -12,6 +12,7 @@ AceApp::Application.routes.draw do
 
   resources :statistics_source_types
 
+  match 'process_managers/get_current_statistics' => 'process_managers#get_current_statistics'
   resources :process_managers
 
   devise_for :users
@@ -27,6 +28,7 @@ AceApp::Application.routes.draw do
   get "/pages/workspace"
   get "/pages/info"
   get "/pages/products"
+  get "/pages/monitor"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

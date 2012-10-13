@@ -25,8 +25,13 @@ class PagesController < ApplicationController
   def info
   end
 
-   # GET "pages/products"
+  # GET "pages/products"
   def products
   end
+
+  # GET "pages/monitor"
+  def monitor
+  end
+
 
 end
