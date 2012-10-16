@@ -2,63 +2,106 @@
 
   <div class="row">
 
-    <div class="span6">
+    <div class="span6 stat-summary">
 
-      <div class="widget">
+      <% @sources.sort_by { |s| s.statistics_source_type.name }.each_with_index do |source, index| %>
+          <% source_type = source.statistics_source_type %>
+          <% data_items = source.data_items %>
 
-        <div class="widget-header">
-          <i class="icon-star"></i>
+          <button type="button" class="btn btn-large btn-block stat-summary-button" data-toggle="collapse" data-target="#stat-summary-table-<%= index %>">
+            <i class="stat-summary-icon icon-chevron-right icon-large"></i>
 
-          <h3>Process Manager</h3>
-        </div>
-        <!-- /widget-header -->
+            <div class="stat-summary-description">
+              <h4><%= source_type.name %></h4>
+              <h6 class="muted"><%= source.source_path %></h6>
+            </div>
 
-        <div class="widget-content">
+            <div class="stat-summary-value">
+              <h4 id="<%= source.source_path %>-ppm" class="text-success">0.0</h4>
+              <h6 class="muted">PPM</h6>
+            </div>
 
-          <div id="live-pm-data-chart-container">
+          </button>
+
+          <div id="stat-summary-table-<%= index %>" class="collapse">
+            <div class="widget widget-table">
+
+              <div class="widget-content stat-summary-content">
+                <table class="table table-bordered table-striped">
+
+                  <tbody>
+
+                  <% data_items.each do |di| %>
+                      <% di_type = di.data_item_type %>
+                      <% di_id = source.source_path + "/" + di_type.name %>
+                      <tr>
+
+                        <td class="description"><%= di_type.name %> </td>
+                        <td id="<%= di_id %>" class="value"><%= di_type.default_value %> <%= di_type.unit %></td>
+
+                      </tr>
+                  <% end %>
+
+                  </tbody>
+                </table>
+
+              </div>
+              <!-- .widget-content -->
+
+            </div>
+
+
           </div>
 
-        </div>
-        <!-- /widget-content -->
-
-      </div>
-      <!-- /widget -->
-
-      <div class="widget">
-
-        <div class="widget-header">
-          <i class="icon-star"></i>
-
-          <h3>Robots</h3>
-        </div>
-        <!-- /widget-header -->
-
-        <div class="widget-content">
-
-          <div id="live-robot-data-chart-container">
-          </div>
-
-        </div>
-        <!-- /widget-content -->
-
-      </div>
-      <!-- /widget -->
+    <% end %>
 
     </div>
     <!-- /span6 -->
 
     <div class="span6">
-      <div class="widget">
 
-        <div class="widget-header">
-        </div>
+         <div class="widget">
 
-        <div class="widget-content">
-        </div>
+           <div class="widget-header">
 
-      </div>
-    </div>
+             <h3>Live System Data</h3>
+           </div>
+           <!-- /widget-header -->
+
+           <div class="widget-content">
+
+             <div id="live-pm-data-chart-container">
+             </div>
+
+           </div>
+           <!-- /widget-content -->
+
+         </div>
+         <!-- /widget -->
+
+         <!--<div class="widget">-->
+
+           <!--<div class="widget-header">-->
+             <!--<i class="icon-star"></i>-->
+
+             <!--<h3>Robots</h3>-->
+           <!--</div>-->
+           <!--&lt;!&ndash; /widget-header &ndash;&gt;-->
+
+           <!--<div class="widget-content">-->
+
+             <!--<div id="live-robot-data-chart-container">-->
+             <!--</div>-->
+
+           <!--</div>-->
+           <!--&lt;!&ndash; /widget-content &ndash;&gt;-->
+
+         <!--</div>-->
+         <!-- /widget -->
+
+       </div>
     <!-- /span6 -->
+
 
   </div>
   <!-- /row -->
