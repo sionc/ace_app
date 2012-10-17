@@ -32,10 +32,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="monitor.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="monitor.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/pages/monitor.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="64" column="38" selection-start="1941" selection-end="1941" vertical-scroll-proportion="0.30783582">
+            <state line="64" column="38" selection-start="1941" selection-end="1941" vertical-scroll-proportion="-6.875">
               <folding />
             </state>
           </provider>
@@ -50,10 +50,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="monitor.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="monitor.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/monitor.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="132" column="54" selection-start="3706" selection-end="3706" vertical-scroll-proportion="0.0">
+            <state line="66" column="54" selection-start="2269" selection-end="2269" vertical-scroll-proportion="0.4712042">
               <folding />
             </state>
           </provider>
@@ -80,7 +80,7 @@
       <file leaf-file-name="process_managers_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/process_managers_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="81" column="26" selection-start="2206" selection-end="2331" vertical-scroll-proportion="0.0">
+            <state line="113" column="80" selection-start="3492" selection-end="3492" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -121,15 +121,15 @@
         <option value="$PROJECT_DIR$/app/models/process_manager.rb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/models/data_item_value.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/process_managers_controller.rb" />
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/application.css.scss" />
         <option value="$PROJECT_DIR$/app/views/layouts/_navbar.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/zcustom.css" />
         <option value="$PROJECT_DIR$/app/controllers/pages_controller.rb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/monitor.css" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/monitor.js" />
         <option value="$PROJECT_DIR$/app/views/pages/monitor.html.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/process_managers_controller.rb" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/monitor.js" />
       </list>
     </option>
   </component>
@@ -767,20 +767,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/process_managers_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="81" column="26" selection-start="2206" selection-end="2331" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/pages_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="41" selection-start="622" selection-end="622" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/monitor.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="49" selection-start="219" selection-end="219" vertical-scroll-proportion="0.0">
@@ -795,16 +781,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/monitor.js">
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/statistics_entries.css.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="132" column="54" selection-start="3706" selection-end="3706" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/pages_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="41" selection-start="622" selection-end="622" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/pages/monitor.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="38" selection-start="1941" selection-end="1941" vertical-scroll-proportion="0.30783582">
+        <state line="64" column="38" selection-start="1941" selection-end="1941" vertical-scroll-proportion="-6.875">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/process_managers_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="113" column="80" selection-start="3492" selection-end="3492" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/monitor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="66" column="54" selection-start="2269" selection-end="2269" vertical-scroll-proportion="0.4712042">
           <folding />
         </state>
       </provider>

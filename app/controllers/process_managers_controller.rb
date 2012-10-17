@@ -84,9 +84,9 @@ class ProcessManagersController < ApplicationController
 
   # GET /process_managers/get_current_statistics.json?id=1
   def get_current_statistics
-    @process_manager = ProcessManager.find(params[:id])
-    last_entry = StatisticsEntry.last.id
-    last_stats = DataItemValue.where(:statistics_entry_id => last_entry)
+    @process_manager = ProcessManager.last
+    last_entry = StatisticsEntry.last
+    last_stats = DataItemValue.where(:statistics_entry_id => last_entry.id)
     last_stats_by_data_item_id = Hash.new
     last_stats.each do |ls|
         last_stats_by_data_item_id[ls.data_item_id] = ls.current_value
@@ -110,7 +110,9 @@ class ProcessManagersController < ApplicationController
 
     respond_to do |format|
       format.json { render json: {:path => @process_manager.workspace_path,
-                                  :statistics_sources => source_list} }
+                                  :entry_id => last_entry.id,
+                                  :entry_timestamp => last_entry.timestamp.to_i,
+                                  :statistics_sources => source_list}}
     end
   end
 end

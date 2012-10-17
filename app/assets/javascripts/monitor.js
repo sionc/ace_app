@@ -2,6 +2,7 @@ var partsPerMinute = 0;
 var processManagerData;
 var dataItems = {};
 var ppmBySource = {};
+var lastEntryId = -1;
 
 // Setup the Ajax token for Javascript
 var setupAjax = function() {
@@ -16,11 +17,16 @@ var setupAjax = function() {
 var getProcessManagerData = function() {
     $.ajax({
         type: 'GET',
-        url: '/process_managers/get_current_statistics?id=1',
+        url: '/process_managers/get_current_statistics',
         dataType: 'json',
         timeout:2000,
         success: function(data){
             processManagerData = jQuery.parseJSON(JSON.stringify(data));
+
+            var entryId = processManagerData.entry_id;
+            var entryTimestamp = processManagerData.entry_timestamp;
+            var isCurrent = IsEntryCurrent(entryId, entryTimestamp);
+
             partsPerMinute = processManagerData.statistics_sources[0].data_items[3].current_value;
 
             var numSources = processManagerData.statistics_sources.length;
@@ -30,6 +36,11 @@ var getProcessManagerData = function() {
                 for (var j = 0; j < numItems; j++) {
                     var item = source.data_items[j];
                     var id = getDataItemIdentifier(source.path, item.name);
+
+                    // If last entry is not current, then set the data item values to default
+                    if (!isCurrent)
+                        item.current_value = item.default_value;
+
                     dataItems[id] = item;
 
                     if (item.name == "Instances Per Minute" || item.name == "Parts Per Minute") {
@@ -46,6 +57,22 @@ var getProcessManagerData = function() {
             updatePpmValues();
         }
     });
+};
+
+var IsEntryCurrent = function(entryId, entryTimestamp) {
+//   if (entryId == lastEntryId)
+//       return false;
+//
+//   lastEntryId = entryId;
+
+   var now = new Date();
+   var curTime = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(),
+       now.getUTCHours(), now.getUTCMinutes(), now.getUTCSeconds());
+
+   curTime = curTime/1000;
+   acceptableOffset = 60; // two minutes
+
+   return Math.abs(curTime - entryTimestamp) < acceptableOffset;
 };
 
 var updateDataItemValues = function () {
