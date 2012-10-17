@@ -9,15 +9,3 @@
 .main {
     border-bottom: none !important;
 }
-
-.navbar .brand {
-    text-shadow: none;
-}
-
-.navbar .nav > li > a {
-   text-shadow: none;
-}
-
-.navbar .nav > li > a:hover {
-   color: white;
-}

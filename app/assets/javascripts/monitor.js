@@ -1,4 +1,3 @@
-var partsPerMinute = 0;
 var processManagerData;
 var dataItems = {};
 var ppmBySource = {};
@@ -14,7 +13,7 @@ var setupAjax = function() {
 };
 
 // Get process manager data
-var getProcessManagerData = function() {
+var getCurrentProcessManagerData = function() {
     $.ajax({
         type: 'GET',
         url: '/process_managers/get_current_statistics',
@@ -26,8 +25,6 @@ var getProcessManagerData = function() {
             var entryId = processManagerData.entry_id;
             var entryTimestamp = processManagerData.entry_timestamp;
             var isCurrent = IsEntryCurrent(entryId, entryTimestamp);
-
-            partsPerMinute = processManagerData.statistics_sources[0].data_items[3].current_value;
 
             var numSources = processManagerData.statistics_sources.length;
             for(var i = 0; i < numSources; i++) {
@@ -44,11 +41,8 @@ var getProcessManagerData = function() {
                     dataItems[id] = item;
 
                     if (item.name == "Instances Per Minute" || item.name == "Parts Per Minute") {
-                        ppmBySource[source.path] = item.current_value;
-                    }
-
-                    if (source.type == "Process Manager" && item.name == "Parts Per Minute") {
-                        partsPerMinute = item.current_value;
+                        ppmBySource[source.path] = { type: source.type,
+                                                     current_value: item.current_value};
                     }
                 }
             }
@@ -60,6 +54,7 @@ var getProcessManagerData = function() {
 };
 
 var IsEntryCurrent = function(entryId, entryTimestamp) {
+//    return true;
 //   if (entryId == lastEntryId)
 //       return false;
 //
@@ -70,7 +65,7 @@ var IsEntryCurrent = function(entryId, entryTimestamp) {
        now.getUTCHours(), now.getUTCMinutes(), now.getUTCSeconds());
 
    curTime = curTime/1000;
-   acceptableOffset = 60; // two minutes
+   var acceptableOffset = 5; // two minutes
 
    return Math.abs(curTime - entryTimestamp) < acceptableOffset;
 };
@@ -91,7 +86,7 @@ var updatePpmValues = function () {
        var s = $(this).attr('id');
        var pos = s.indexOf("-ppm");
        var sourcePath = s.substr(0, pos);
-       var curVal = ppmBySource[sourcePath];
+       var curVal = ppmBySource[sourcePath].current_value;
        $(this).text(curVal);
    });
 };
@@ -101,7 +96,9 @@ var initializePpmBySource = function () {
        var s = $(this).attr('id');
        var pos = s.indexOf("-ppm");
        var sourcePath = s.substr(0, pos);
-       ppmBySource[sourcePath] = 0.0;
+       var sourceType = sourcePath.substr(0, sourcePath.indexOf(":"));
+       ppmBySource[sourcePath] = {type: sourceType,
+                                  current_value: 0.0};
    });
 };
 
@@ -109,37 +106,78 @@ var getDataItemIdentifier = function(sourcePath, dataItemName) {
      return sourcePath + "/" + dataItemName;
 };
 
-// Initialize test data chart
-var initializeLivePMDataChart = function() {
+var initializeCollapsible = function() {
+    $(".stat-summary-button").click(function() {
+        //var id = $(this).attr('data-target');
+
+        if ($(this).hasClass("collapsed")) {
+            $(this).find('i').removeClass("icon-chevron-down");
+            $(this).find('i').addClass("icon-chevron-right");
+        } else {
+            $(this).find('i').removeClass("icon-chevron-right");
+            $(this).find('i').addClass("icon-chevron-down");
+        }
+    });
+};
+
+var initializePartsPerMinuteChart = function() {
    Highcharts.setOptions({
 		global: {
 			useUTC: false
 		}
 	});
 
+    var series = [];
+    var time =  (new Date()).getTime();
+    for (var source in ppmBySource){
+        var type = ppmBySource[source].type;
+        if (!(type == "Robot" || type == "Process Manager")) {
+            continue;
+        }
+        var current_value = ppmBySource[source].current_value;
+
+        series.push({
+            name:source,
+            data:(function() {
+				var data = [];
+
+				for (var i = -29; i <= 0; i++) {
+					data.push({
+						x: time + i * 1000,
+						y: current_value
+					});
+				}
+				return data;
+			})()
+        });
+    }
+
 	var chart = new Highcharts.Chart({
 		chart: {
-			renderTo: 'live-pm-data-chart-container',
+			renderTo: 'live-ppm-chart-container',
 			type: 'spline',
 			marginRight: 10,
 			events: {
-				load: function() {
+                load: function() {
 
-					// set up the updating of the chart each second
-					var series = this.series[0];
-					setInterval(function() {
-                        getProcessManagerData();
-
-						var x = (new Date()).getTime(); // current time
-						series.addPoint([x, partsPerMinute], true, true);
-					}, 2000);
-				}
+                    // set up the updating of the chart each second
+                    var s = this.series;
+                    setInterval(function() {
+                        var numSeries = s.length;
+                        var x = (new Date()).getTime();
+                        for (var i = 0; i < numSeries; i++) {
+                            var curSeries = s[i];
+                            var currentData = ppmBySource[curSeries.name].current_value;
+                            curSeries.addPoint([x, currentData], true, true);
+                        }
+                    }, 2000);
+                }
 			},
             backgroundColor: 'transparent',
             borderColor: 'transparent',
             borderWidth: '1',
             plotBackgroundColor: 'transparent',
-            height: 667
+            height: 280
 		},
         credits: {
             enabled:false
@@ -164,8 +202,8 @@ var initializeLivePMDataChart = function() {
 		tooltip: {
 			formatter: function() {
 					return '<b>'+ this.series.name +'</b><br/>'+
-					Highcharts.dateFormat('%Y-%m-%d %H:%M:%S', this.x) +'<br/>'+
-					Highcharts.numberFormat(this.y, 2);
+                    '<b>'+ Highcharts.numberFormat(this.y, 2) + '</b>' + ' at ' +
+                    Highcharts.dateFormat('%H:%M:%S', this.x) ;
 			}
 		},
 		legend: {
@@ -174,172 +212,121 @@ var initializeLivePMDataChart = function() {
 		exporting: {
 			enabled: false
 		},
-		series: [{
-			name: 'Process Manager PPM',
-			data: (function() {
-				// generate an array of random data
-				var data = [],
-					time = (new Date()).getTime(),
-					i;
-
-				for (i = -19; i <= 0; i++) {
-					data.push({
-						x: time + i * 1000,
-						y: partsPerMinute
-					});
-				}
-				return data;
-			})()
-		}]
+		series: series
 	});
 };
 
-var initializeCollapsible = function() {
-    $(".stat-summary-button").click(function() {
-        //var id = $(this).attr('data-target');
+var initializeBeltInstancesPerMinuteChart = function() {
+   Highcharts.setOptions({
+		global: {
+			useUTC: false
+		}
+	});
 
-        if ($(this).hasClass("collapsed")) {
-            $(this).find('i').removeClass("icon-chevron-down");
-            $(this).find('i').addClass("icon-chevron-right");
-        } else {
-            $(this).find('i').removeClass("icon-chevron-right");
-            $(this).find('i').addClass("icon-chevron-down");
-        }
-    });
+   var series = [];
+   var time =  (new Date()).getTime();
+   for (var source in ppmBySource){
+       var type = ppmBySource[source].type;
+       if (type != "Belt") {
+           continue;
+       }
+       var current_value = ppmBySource[source].current_value;
+
+       series.push({
+           name:source,
+           data:(function() {
+               var data = [];
+
+               for (var i = -29; i <= 0; i++) {
+                   data.push({
+                       x: time + i * 1000,
+                       y: current_value
+                   });
+               }
+               return data;
+           })()
+       });
+    }
+
+	var chart = new Highcharts.Chart({
+		chart: {
+			renderTo: 'live-belt-ipm-chart-container',
+			type: 'spline',
+			marginRight: 10,
+			events: {
+				load: function() {
+
+					 // set up the updating of the chart each second
+                    var s = this.series;
+                    setInterval(function() {
+                        var numSeries = s.length;
+                        var x = (new Date()).getTime();
+                        for (var i = 0; i < numSeries; i++) {
+                            var curSeries = s[i];
+                            var currentData = ppmBySource[curSeries.name].current_value;
+                            curSeries.addPoint([x, currentData], true, true);
+                        }
+                    }, 2000);
+				}
+			},
+            backgroundColor: 'transparent',
+            borderColor: 'transparent',
+            borderWidth: '1',
+            plotBackgroundColor: 'transparent',
+            height: 280
+		},
+        credits: {
+            enabled:false
+        },
+		title: {
+			text: ''
+		},
+		xAxis: {
+			type: 'datetime',
+			tickPixelInterval: 150
+		},
+		yAxis: {
+			title: {
+				text: 'Instances Per Minute'
+			},
+			plotLines: [{
+				value: 0,
+				width: 1,
+				color: '#808080'
+			}]
+		},
+		tooltip: {
+			formatter: function() {
+					return '<b>'+ this.series.name +'</b><br/>'+
+                    '<b>'+ Highcharts.numberFormat(this.y, 2) + '</b>' + ' at ' +
+                    Highcharts.dateFormat('%H:%M:%S', this.x) ;
+			}
+		},
+		legend: {
+			enabled: true
+		},
+		exporting: {
+			enabled: false
+		},
+		series: series
+	});
 };
 
-//var initializeLiveRobotDataChart = function() {
-//   Highcharts.setOptions({
-//		global: {
-//			useUTC: false
-//		}
-//	});
-//
-//    var series = [];
-//    var time =  (new Date()).getTime();
-//    for (var source in ppmBySource){
-//        series.push({
-//            name:source,
-//            data:(function() {
-//				// generate an array of random data
-//				var data = [],
-//					//time = (new Date()).getTime(),
-//					i;
-//
-//				for (i = -19; i <= 0; i++) {
-//					data.push({
-//						x: time + i * 1000,
-//						y: ppmBySource[source]
-//					});
-//				}
-//				return data;
-//			})()
-//        });
-//    }
-//
-//    //alert(series.length);
-//
-//	var chart = new Highcharts.Chart({
-//		chart: {
-//			renderTo: 'live-robot-data-chart-container',
-//			type: 'spline',
-//			marginRight: 10,
-//			events: {
-//                load: function() {
-//
-//                    var numSeries = this.series.length;
-//                    for (var i = 0; i < numSeries; i++) {
-//                        // set up the updating of the chart each second
-//                        var series = this.series[i];
-//                        setInterval(function() {
-//                            var x = (new Date()).getTime();
-//                            var currentData = ppmBySource[series.name];
-//                            series.addPoint([x, currentData], true, true);
-//                        }, 2000);
-//                    }
-//                }
-//			},
-//            backgroundColor: 'transparent',
-//            borderColor: 'transparent',
-//            borderWidth: '1',
-//            plotBackgroundColor: 'transparent'
-//		},
-//        credits: {
-//            enabled:false
-//        },
-//		title: {
-//			text: ''
-//		},
-//		xAxis: {
-//			type: 'datetime',
-//			tickPixelInterval: 150
-//		},
-//		yAxis: {
-//			title: {
-//				text: 'Value'
-//			},
-//			plotLines: [{
-//				value: 0,
-//				width: 1,
-//				color: '#808080'
-//			}]
-//		},
-//		tooltip: {
-//			formatter: function() {
-//					return '<b>'+ this.series.name +'</b><br/>'+
-//					Highcharts.dateFormat('%Y-%m-%d %H:%M:%S', this.x) +'<br/>'+
-//					Highcharts.numberFormat(this.y, 2);
-//			}
-//		},
-//		legend: {
-//			enabled: false
-//		},
-//		exporting: {
-//			enabled: false
-//		},
-//		series: series
-////            [{
-////			name: 'Random data',
-////			data: (function() {
-////				// generate an array of random data
-////				var data = [],
-////					time = (new Date()).getTime(),
-////					i;
-////
-////				for (i = -19; i <= 0; i++) {
-////					data.push({
-////						x: time + i * 1000,
-////						y: Math.random()
-////					});
-////				}
-////				return data;
-////			})()
-////		}]
-//	});
-//};
-
-//var initializeCollapsible = function() {
-////    $('div[id|="stat-summary-table"]').on('hidden', function () {
-////        alert("hidden");
-////    });
-//    $('#stat-summary-table-0').on('hidden', function () {
-//        alert("hidden");
-//    });
-//};
-
 $(function(){
-   setupAjax();
-   getProcessManagerData();
-   initializePpmBySource();
-   initializeCollapsible();
-
-   if ($("#live-pm-data-chart-container").length == 0)
+   if ($("#live-ppm-chart-container").length == 0)
         return;
 
-   initializeLivePMDataChart();
+   setupAjax();
+   var intervalID = setInterval(getCurrentProcessManagerData, 2000);
+   // To clear periodic update
+   // clearInterval(intervalID);
 
-//   if ($("#live-robot-data-chart-container").length == 0)
-//        return;
-//
-//   initializeLiveRobotDataChart();
+   initializePpmBySource();
+   initializeCollapsible();
+   initializePartsPerMinuteChart();
+
+   if ($("#live-belt-ipm-chart-container").length == 0)
+        return;
+
+   initializeBeltInstancesPerMinuteChart();
 });
