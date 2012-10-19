@@ -54,7 +54,6 @@ var getCurrentProcessManagerData = function() {
 };
 
 var IsEntryCurrent = function(entryId, entryTimestamp) {
-//    return true;
 //   if (entryId == lastEntryId)
 //       return false;
 //
@@ -107,16 +106,18 @@ var getDataItemIdentifier = function(sourcePath, dataItemName) {
 };
 
 var initializeCollapsible = function() {
-    $(".stat-summary-button").click(function() {
-        //var id = $(this).attr('data-target');
+    $('[id^="stat-summary-table"]').each(function() {
+        var id = "#" + $(this).attr('id');
+        var icon = $('[data-target='+id+']').find('i');
+        $(this).on('hidden', function () {
+            $(icon).removeClass("icon-chevron-down");
+            $(icon).addClass("icon-chevron-right");
+        });
 
-        if ($(this).hasClass("collapsed")) {
-            $(this).find('i').removeClass("icon-chevron-down");
-            $(this).find('i').addClass("icon-chevron-right");
-        } else {
-            $(this).find('i').removeClass("icon-chevron-right");
-            $(this).find('i').addClass("icon-chevron-down");
-        }
+        $(this).on('shown', function () {
+            $(icon).removeClass("icon-chevron-right");
+            $(icon).addClass("icon-chevron-down");
+        });
     });
 };
 
@@ -141,9 +142,9 @@ var initializePartsPerMinuteChart = function() {
             data:(function() {
 				var data = [];
 
-				for (var i = -29; i <= 0; i++) {
+				for (var i = -19; i <= 0; i++) {
 					data.push({
-						x: time + i * 1000,
+						x: time + i * 2000,
 						y: current_value
 					});
 				}
@@ -237,9 +238,9 @@ var initializeBeltInstancesPerMinuteChart = function() {
            data:(function() {
                var data = [];
 
-               for (var i = -29; i <= 0; i++) {
+               for (var i = -19; i <= 0; i++) {
                    data.push({
-                       x: time + i * 1000,
+                       x: time + i * 2000,
                        y: current_value
                    });
                }
