@@ -323,7 +323,7 @@ $(function(){
    // clearInterval(intervalID);
 
    initializePpmBySource();
-   initializeCollapsible();
+   //initializeCollapsible();
    //initializePartsPerMinuteChart();
 
    //if ($("#live-belt-ipm-chart-container").length == 0)
