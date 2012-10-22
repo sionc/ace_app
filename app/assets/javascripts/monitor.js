@@ -318,16 +318,16 @@ $(function(){
         return;
 
    setupAjax();
-   var intervalID = setInterval(getCurrentProcessManagerData, 2000);
+   var intervalID = setInterval(getCurrentProcessManagerData, 5000);
    // To clear periodic update
    // clearInterval(intervalID);
 
    initializePpmBySource();
    initializeCollapsible();
-   initializePartsPerMinuteChart();
+   //initializePartsPerMinuteChart();
 
-   if ($("#live-belt-ipm-chart-container").length == 0)
-        return;
+   //if ($("#live-belt-ipm-chart-container").length == 0)
+   //     return;
 
-   initializeBeltInstancesPerMinuteChart();
+   //initializeBeltInstancesPerMinuteChart();
 });
