@@ -48,7 +48,13 @@ $(document).ready(function() {
 		},
 			series: [{
 			name: 'Parts Processed',
-			data: [200, 220, 170, 320, 180, 220, 190],
+			data: [19200 + parseInt(Math.random() * 2000),
+                    19200 - parseInt(Math.random() * 2000),
+                    19200 + parseInt(Math.random() * 2000),
+                    19200 - parseInt(Math.random() * 2000),
+                    19200 + parseInt(Math.random() * 2000),
+                    19200 - parseInt(Math.random() * 2000),
+                    19200 + parseInt(Math.random() * 2000)],
             color: colors[0]
 
 		}]

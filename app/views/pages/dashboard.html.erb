@@ -18,13 +18,13 @@
       <div id="chart-stats" class="stats">
 
         <div class="stat stat-time">
-          <span class="stat-value">84.78 %</span>
+          <span class="stat-value">92.78 %</span>
           O.E.E.
         </div>
         <!-- /substat -->
 
         <div class="stat stat-time">
-          <span class="stat-value">03:28:13</span>
+          <span class="stat-value"><%= @pm_data_item_values["Total Uptime"] %></span>
           Total Uptime
         </div>
         <!-- /substat -->
@@ -35,19 +35,19 @@
       <div class="stats">
 
         <div class="stat">
-          <span class="stat-value">8,367</span>
+          <span class="stat-value"><%= @pm_data_item_values["Parts Processed"] %></span>
           Parts Processed
         </div>
         <!-- /stat -->
 
         <div class="stat">
-          <span class="stat-value">185</span>
+          <span class="stat-value"><%= @pm_data_item_values["Parts Per Minute"] %></span>
           Parts Per Minute
         </div>
         <!-- /stat -->
 
         <div class="stat">
-          <span class="stat-value">97 %</span>
+          <span class="stat-value"><%= @pm_data_item_values["Processing Time"] %> %</span>
           Processing Time
         </div>
         <!-- /stat -->
@@ -89,24 +89,24 @@
     <div class="widget-content">
 
       <div class="shortcuts">
-        <a href="/pages/workspace" class="shortcut">
-          <i class="shortcut-icon icon-list-alt"></i>
-          <span class="shortcut-label">Workspace</span>
+        <a href="/pages/monitor" class="shortcut">
+          <i class="shortcut-icon icon-bar-chart"></i>
+          <span class="shortcut-label">Monitor</span>
         </a>
 
         <a href="/pages/reports" class="shortcut">
-          <i class="shortcut-icon icon-bar-chart"></i>
+          <i class="shortcut-icon icon-book"></i>
           <span class="shortcut-label">Reports</span>
         </a>
 
-        <a href="/pages/products" class="shortcut">
-          <i class="shortcut-icon icon-tags"></i>
-          <span class="shortcut-label">Products</span>
-        </a>
-
-        <a href="/pages/info" class="shortcut">
+        <a href="#" class="shortcut">
           <i class="shortcut-icon icon-info-sign"></i>
           <span class="shortcut-label">Info</span>
+        </a>
+
+        <a href="#" class="shortcut">
+          <i class="shortcut-icon icon-tags"></i>
+          <span class="shortcut-label">Products</span>
         </a>
 
         <a href="#" class="shortcut">
@@ -180,12 +180,12 @@
             <a href="javascript:;" class="news-item-title">System completed order #256</a>
 
             <p class="news-item-preview">The system completed order #256. It reached the production milestone by
-              processing 11230 units of Product A.</p>
+              processing 150,000 units of Product A.</p>
           </div>
 
           <div class="news-item-date">
-            <span class="news-item-day">08</span>
-            <span class="news-item-month">Jul</span>
+            <span class="news-item-day">29</span>
+            <span class="news-item-month">Oct</span>
           </div>
         </li>
         <li>
@@ -194,13 +194,13 @@
             <span class="label label-info">Heads up</span>
             <a href="javascript:;" class="news-item-title">Gripper changeover needed</a>
 
-            <p class="news-item-preview">Grippers have been through 100000 cycles. We recommend that you
-              replace the grippers. More grippers can be ordered from the <a href="/pages/products">Products</a> section.</p>
+            <p class="news-item-preview">Grippers have been through 1,000,000 cycles. We recommend that you
+              replace the grippers. Please call an Adept Sales Representative to order more grippers.</p>
           </div>
 
           <div class="news-item-date">
-            <span class="news-item-day">07</span>
-            <span class="news-item-month">Jul</span>
+            <span class="news-item-day">28</span>
+            <span class="news-item-month">Oct</span>
           </div>
         </li>
 
@@ -215,8 +215,8 @@
           </div>
 
           <div class="news-item-date">
-            <span class="news-item-day">06</span>
-            <span class="news-item-month">Jul</span>
+            <span class="news-item-day">28</span>
+            <span class="news-item-month">Oct</span>
           </div>
         </li>
       </ul>

@@ -7,6 +7,38 @@ class PagesController < ApplicationController
 
   # GET "pages/dashboard"
   def dashboard
+    last_entry = StatisticsEntry.last
+    source_type = StatisticsSourceType.where(:name => "Process Manager").last
+    source = source_type.statistics_sources.where(:process_manager_id => ProcessManager.last.id).last
+
+    parts_processed_type_id = DataItemType.where(:name => "Parts Processed").last.id
+    parts_per_minute_type_id = DataItemType.where(:name => "Parts Per Minute").last.id
+    processing_time_type_id = DataItemType.where(:name => "Processing Time").last.id
+    total_up_time_type_id = DataItemType.where(:name => "Average Total Time").last.id
+
+    data_items = source.data_items
+
+    parts_processed_id = data_items.where(:data_item_type_id => parts_processed_type_id).last.id
+    parts_per_minute_id = data_items.where(:data_item_type_id => parts_per_minute_type_id).last.id
+    processing_time_id = data_items.where(:data_item_type_id => processing_time_type_id).last.id
+    total_up_time_id = data_items.where(:data_item_type_id => total_up_time_type_id).last.id
+
+    data_item_values = DataItemValue.where(:statistics_entry_id => last_entry.id)
+
+    parts_processed = data_item_values.where(:data_item_id => parts_processed_id).last.current_value.to_i
+    parts_per_minute = data_item_values.where(:data_item_id => parts_per_minute_id).last.current_value
+    processing_time = data_item_values.where(:data_item_id => processing_time_id).last.current_value
+    total_uptime = data_item_values.where(:data_item_id => total_up_time_id).last.current_value/1000
+    total_uptime_str = (total_uptime/3600).to_i.to_s + ":" + ((total_uptime % 3600)/60).to_i.to_s + ":" +
+                      (total_uptime % 60).to_i.to_s
+
+    @pm_data_item_values = {"Parts Processed" => parts_processed, "Parts Per Minute" => parts_per_minute,
+                            "Processing Time" => processing_time, "Total Uptime" => total_uptime_str}
+
+
+    respond_to do |format|
+      format.html
+    end
   end
 
   # GET "pages/pricing"

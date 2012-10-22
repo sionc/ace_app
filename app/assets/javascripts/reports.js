@@ -7,52 +7,87 @@ var displayWeeklyProgressChart = function() {
         name = 'Weekly Progress',
         data = [
             {
-                y: 2544 ,
+                y: 19200 * 24 + parseInt(Math.random() * 24000),
                 color: colors[0],
                 drilldown: {
                     name: 'Mon',
                     categories: ['1-2pm', '2-3pm', '3-4pm', '4-5pm', '5-6pm', '6-7pm', '7-8pm', '8-9pm'],
-                    data: [320, 280, 300, 310, 250, 290, 250, 330],
+                    data: [19200 + parseInt(Math.random() * 2000),
+                    19200 - parseInt(Math.random() * 2000),
+                    19200 + parseInt(Math.random() * 2000),
+                    19200 - parseInt(Math.random() * 2000),
+                    19200 + parseInt(Math.random() * 2000),
+                    19200 - parseInt(Math.random() * 2000),
+                    19200 + parseInt(Math.random() * 2000),
+                    19200 + parseInt(Math.random() * 2000)],
                     color: colors[0]
                 }
             },
             {
-                y: 2683,
+                y: 19200 * 24 - parseInt(Math.random() * 24000),
                 color: colors[1],
                 drilldown: {
                     name: 'Tue',
                     categories: ['1-2pm', '2-3pm', '3-4pm', '4-5pm', '5-6pm', '6-7pm', '7-8pm', '8-9pm'],
-                    data: [320, 280, 300, 310, 250, 290, 250, 330],
+                    data: [19200 + parseInt(Math.random() * 2000),
+                    19200 - parseInt(Math.random() * 2000),
+                    19200 + parseInt(Math.random() * 2000),
+                    19200 - parseInt(Math.random() * 2000),
+                    19200 + parseInt(Math.random() * 2000),
+                    19200 - parseInt(Math.random() * 2000),
+                    19200 + parseInt(Math.random() * 2000),
+                    19200 + parseInt(Math.random() * 2000)],
                     color: colors[1]
                 }
             },
             {
-                y: 2375,
+                y: 19200 * 24 + parseInt(Math.random() * 24000),
                 color: colors[2],
                 drilldown: {
                     name: 'Wed',
                     categories: ['1-2pm', '2-3pm', '3-4pm', '4-5pm', '5-6pm', '6-7pm', '7-8pm', '8-9pm'],
-                    data: [320, 280, 300, 310, 250, 290, 250, 330],
+                    data: [19200 + parseInt(Math.random() * 2000),
+                    19200 - parseInt(Math.random() * 2000),
+                    19200 + parseInt(Math.random() * 2000),
+                    19200 - parseInt(Math.random() * 2000),
+                    19200 + parseInt(Math.random() * 2000),
+                    19200 - parseInt(Math.random() * 2000),
+                    19200 + parseInt(Math.random() * 2000),
+                    19200 + parseInt(Math.random() * 2000)],
                     color: colors[2]
                 }
             },
             {
-                y: 2592,
+                y: 19200 * 24 - parseInt(Math.random() * 24000),
                 color: colors[3],
                 drilldown: {
                     name: 'Thu',
                     categories: ['1-2pm', '2-3pm', '3-4pm', '4-5pm', '5-6pm', '6-7pm', '7-8pm', '8-9pm'],
-                    data: [320, 280, 300, 310, 250, 290, 250, 330],
+                    data: [19200 + parseInt(Math.random() * 2000),
+                    19200 - parseInt(Math.random() * 2000),
+                    19200 + parseInt(Math.random() * 2000),
+                    19200 - parseInt(Math.random() * 2000),
+                    19200 + parseInt(Math.random() * 2000),
+                    19200 - parseInt(Math.random() * 2000),
+                    19200 + parseInt(Math.random() * 2000),
+                    19200 + parseInt(Math.random() * 2000)],
                     color: colors[3]
                 }
             },
             {
-                y: 2621,
+                y: 19200 * 24 + parseInt(Math.random() * 24000),
                 color: colors[4],
                 drilldown: {
                     name: 'Fri',
                     categories: ['1-2pm', '2-3pm', '3-4pm', '4-5pm', '5-6pm', '6-7pm', '7-8pm', '8-9pm'],
-                    data: [320, 280, 300, 310, 250, 290, 250, 330],
+                    data: [19200 + parseInt(Math.random() * 2000),
+                    19200 - parseInt(Math.random() * 2000),
+                    19200 + parseInt(Math.random() * 2000),
+                    19200 - parseInt(Math.random() * 2000),
+                    19200 + parseInt(Math.random() * 2000),
+                    19200 - parseInt(Math.random() * 2000),
+                    19200 + parseInt(Math.random() * 2000),
+                    19200 + parseInt(Math.random() * 2000)],
                     color: colors[4]
                 }
             }
@@ -216,7 +251,7 @@ var displayProductFlowChart = function() {
         colors = Highcharts.getOptions().colors;
 
     $.each(names, function(i, name) {
-        var d = Date.UTC(2006,6,6);
+        var d = Date.UTC(2006,9,25);
         var millisecondsInADay =  1000 * 60 * 60 * 24;
         var data = [];
         var dataItem = [];
@@ -225,7 +260,7 @@ var displayProductFlowChart = function() {
         for (j = 0; j < (365 * 6); j++) {
             dataItem = [];
             dataItem[0] = d + j * millisecondsInADay;
-            dataItem[1] = 180 + parseInt(Math.floor(Math.random()*20));
+            dataItem[1] = 320 + parseInt(Math.floor(Math.random()*20));
             data.push(dataItem);
         }
 
@@ -256,7 +291,7 @@ var displayProductFlowChart = function() {
             },
 
             rangeSelector: {
-                selected: 1
+                selected: 0
             },
 
             yAxis: {
