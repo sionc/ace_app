@@ -1,28 +1,3 @@
-/*.stat-summary-icon {*/
-    /*float: left;*/
-    /*margin: 45px;*/
-/*}*/
-
-/*.stat-summary-description {*/
-    /*float: left;*/
-    /*margin: 15px;*/
-    /*text-align: left;*/
-/*}*/
-
-/*.stat-summary-value {*/
-    /*float: right;*/
-    /*margin: 15px 60px 15px 15px;*/
-    /*text-align: right;*/
-/*}*/
-
-/*.stat-summary-button {*/
-   /*border-radius: 0 0 0 0 !important;*/
-/*}*/
-
-/*.stat-summary-content {*/
-   /*border-radius: 0 0 5px 5px !important;
-}*/
-
 .stat-summary-description {
     margin: 15px;
     text-align: left;

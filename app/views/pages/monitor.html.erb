@@ -5,118 +5,70 @@
 
     <div class="span6 stat-summary">
 
-    <div class="accordion" id="stat-summary-accordion">
-      <% @sources.each_with_index do |source, index| %>
-      <%# @sources.sort_by { |s| s.statistics_source_type.name }.each_with_index do |source, index| %>
-          <% source_type = source.statistics_source_type %>
-          <% data_items = source.data_items %>
+      <div class="accordion" id="stat-summary-accordion">
+        <% @sources.each_with_index do |source, index| %>
+            <%# @sources.sort_by { |s| s.statistics_source_type.name }.each_with_index do |source, index| %>
+            <% source_type = source.statistics_source_type %>
+            <% data_items = source.data_items %>
 
-          <!--<button type="button" class="btn btn-large btn-block stat-summary-button" data-toggle="collapse" data-target="#stat-summary-table-<%= index %>">-->
-            <!--<i class="stat-summary-icon icon-chevron-right icon-large"></i>-->
-
-            <!--<div class="stat-summary-description">-->
-              <!--<h4><#%= (source_type.name == "Process Strategy") ? source_type.name : source.source_path.split('/').last %></h4>-->
-              <!--<h6 class="muted"><%#= source.source_path %></h6>-->
-            <!--</div>-->
-
-            <!--<%# unless source_type.name == "Process Strategy" %>-->
-                <!--<div class="stat-summary-value">-->
-
-                  <!--<h4 id="<%#= source.source_path %>-ppm" class="text-success">0.0</h4>-->
-                  <!--<h6 class="muted">PPM</h6>-->
-
-                <!--</div>-->
-            <!--<%# end %>-->
-
-          <!--</button>-->
-
-          <!--<div id="stat-summary-table-<%#= index %>" class="collapse">-->
-            <!--<div class="widget widget-table">-->
-
-              <!--<div class="widget-content stat-summary-content">-->
-                <!--<table class="table table-bordered table-striped">-->
-
-                  <!--<tbody>-->
-
-                  <!--<%# data_items.each do |di| %>-->
-                      <!--<%# di_type = di.data_item_type %>-->
-                      <!--<%# di_id = source.source_path + "/" + di_type.name %>-->
-                      <!--<tr>-->
-
-                        <!--<td class="description"><%#= di_type.name %> </td>-->
-                        <!--<td id="<%#= di_id %>" class="value"><%#= di_type.default_value %> <%#= di_type.unit %></td>-->
-
-                      <!--</tr>-->
-                  <!--<%# end %>-->
-
-                  <!--</tbody>-->
-                <!--</table>-->
-
-              <!--</div>-->
-              <!--&lt;!&ndash; .widget-content &ndash;&gt;-->
-
-            <!--</div>-->
-
-
-          <!--</div>-->
-
-
-          <div class="accordion-group">
-            <div class="accordion-heading">
+            <div class="accordion-group">
+              <div class="accordion-heading">
 
                 <div class="stat-summary-description">
                   <h4>
                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#stat-summary-accordion" href="#stat-summary-table-<%= index %>">
-                      <%= (source_type.name == "Process Strategy") ? source_type.name : source.source_path.split('/').last %>
+                      <%= name = (source_type.name == "Process Strategy") ? source_type.name : source.source_path.split('/').last %>
                     </a>
                   </h4>
                   <h6 class="muted"><%= source.source_path %></h6>
                 </div>
 
-                 <% unless source_type.name == "Process Strategy" %>
+                <% unless source_type.name == "Process Strategy" %>
                     <div class="stat-summary-value">
 
-                      <h4 id="<%= source.source_path %>-ppm" class="text-success">0.0</h4>
+                      <% default_ppms = {"Process Manager" => 320, "Robot 1" => 181, "Robot 2" => 141,
+                                         "Front Belt" => 726, "Rear Belt" => 544} %>
+                      <h4 id="<%= source.source_path %>-ppm" class="text-success"><%= default_ppms[name] %></h4>
                       <h6 class="muted">PPM</h6>
 
                     </div>
                 <% end %>
 
-            </div>
+              </div>
 
-            <div id="stat-summary-table-<%= index %>" class="accordion-body collapse">
-              <div class="accordion-inner">
-                <div class="widget widget-table">
+              <div id="stat-summary-table-<%= index %>" class="accordion-body collapse">
+                <div class="accordion-inner">
+                  <div class="widget widget-table">
 
-                  <div class="widget-content stat-summary-content">
-                    <table class="table table-bordered table-striped">
+                    <div class="widget-content stat-summary-content">
+                      <table class="table table-bordered table-striped">
 
-                      <tbody>
+                        <tbody>
 
-                      <% data_items.each do |di| %>
-                          <% di_type = di.data_item_type %>
-                          <% di_id = source.source_path + "/" + di_type.name %>
-                          <tr>
+                        <% data_items.each do |di| %>
+                            <% di_type = di.data_item_type %>
+                            <% di_id = source.source_path + "/" + di_type.name %>
+                            <tr>
 
-                            <td class="description"><%= di_type.name %> </td>
-                            <td id="<%= di_id %>" class="value"><%= di_type.default_value %> <%= di_type.unit %></td>
+                              <td class="description"><%= di_type.name %> </td>
+                              <td id="<%= di_id %>" class="value"><%= di_type.default_value %> <%= di_type.unit %></td>
 
-                          </tr>
-                      <% end %>
+                            </tr>
+                        <% end %>
 
-                      </tbody>
-                    </table>
+                        </tbody>
+                      </table>
+
+                    </div>
+                    <!-- .widget-content -->
 
                   </div>
-                  <!-- .widget-content -->
-
                 </div>
               </div>
             </div>
-          </div>
 
 
-    <% end %>
+        <% end %>
 
       </div>
 
@@ -133,7 +85,7 @@
         </div>
         <!-- /widget-header -->
 
-        <div class="widget-content widget-content-ppm-chart">
+        <div class="widget-content">
 
           <div id="live-ppm-chart-container">
           </div>
@@ -146,24 +98,24 @@
 
       <div class="widget">
 
-           <div class="widget-header">
+        <div class="widget-header">
 
-             <h3>Belt Instances Per Minute</h3>
-           </div>
-           <!-- /widget-header -->
+          <h3>Belt Instances Per Minute</h3>
+        </div>
+        <!-- /widget-header -->
 
-           <div class="widget-content">
+        <div class="widget-content">
 
-             <div id="live-belt-ipm-chart-container">
-             </div>
+          <div id="live-belt-ipm-chart-container">
+          </div>
 
-           </div>
-           <!-- /widget-content -->
+        </div>
+        <!-- /widget-content -->
 
-         </div>
-         <!-- /widget -->
+      </div>
+      <!-- /widget -->
 
-       </div>
+    </div>
     <!-- /span6 -->
 
 

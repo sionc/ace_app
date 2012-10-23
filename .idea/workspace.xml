@@ -35,16 +35,16 @@
       <file leaf-file-name="monitor.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/monitor.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="275" column="48" selection-start="7821" selection-end="7970" vertical-scroll-proportion="0.0">
+            <state line="98" column="76" selection-start="3295" selection-end="3295" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="reports.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="reports.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/reports.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="296" column="50" selection-start="10452" selection-end="10452" vertical-scroll-proportion="0.24107143">
+            <state line="296" column="50" selection-start="10452" selection-end="10452" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -89,7 +89,7 @@
       <file leaf-file-name="monitor.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/pages/monitor.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="135" column="59" selection-start="4601" selection-end="4625" vertical-scroll-proportion="-9.833333">
+            <state line="30" column="105" selection-start="1427" selection-end="1427" vertical-scroll-proportion="15.166667">
               <folding />
             </state>
           </provider>
@@ -98,17 +98,20 @@
       <file leaf-file-name="monitor.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/monitor.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="1" selection-start="677" selection-end="677" vertical-scroll-proportion="0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="overrides.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/overrides.css">
+      <file leaf-file-name="reports.html.erb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/pages/reports.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="1" selection-start="167" selection-end="167" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="247" column="20" selection-start="5491" selection-end="5491" vertical-scroll-proportion="0.89071035">
+              <folding>
+                <element signature="tag#div#1;tag#div#3;tag#div#0" expanded="false" />
+                <element signature="tag#div#2;tag#div#3;tag#div#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -125,7 +128,6 @@
       <list>
         <option value="$PROJECT_DIR$/app/views/pages/dashboard.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/dashboard.js" />
-        <option value="$PROJECT_DIR$/app/views/pages/reports.html.erb" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/config/environments/development.rb" />
         <option value="$PROJECT_DIR$/config/environments/production.rb" />
@@ -134,11 +136,12 @@
         <option value="$PROJECT_DIR$/app/assets/javascripts/jquery.js" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/bootstrap-collapse.js" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/application.js" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/monitor.js" />
-        <option value="$PROJECT_DIR$/app/views/pages/monitor.html.erb" />
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/monitor.css" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/overrides.css" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/reports.js" />
+        <option value="$PROJECT_DIR$/app/views/pages/monitor.html.erb" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/monitor.js" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/monitor.css" />
+        <option value="$PROJECT_DIR$/app/views/pages/reports.html.erb" />
       </list>
     </option>
   </component>
@@ -249,26 +252,8 @@
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ace_app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ace_app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="stylesheets" />
+              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -286,11 +271,47 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
+              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="javascripts" />
+              <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ace_app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ace_app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layouts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ace_app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ace_app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -613,13 +634,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/config/environments/development.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="74" selection-start="1463" selection-end="1463" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="17" column="31" selection-start="640" selection-end="640" vertical-scroll-proportion="0.0">
@@ -662,13 +676,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/bootstrap.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/jquery-ui.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -690,38 +697,55 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/pages/monitor.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/reports.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="135" column="59" selection-start="4601" selection-end="4625" vertical-scroll-proportion="-9.833333">
+        <state line="296" column="50" selection-start="10452" selection-end="10452" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/monitor.css">
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/bootstrap.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="1" selection-start="677" selection-end="677" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/overrides.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="1" selection-start="167" selection-end="167" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/monitor.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="275" column="48" selection-start="7821" selection-end="7970" vertical-scroll-proportion="0.0">
+        <state line="98" column="76" selection-start="3295" selection-end="3295" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/reports.js">
+    <entry file="file://$PROJECT_DIR$/app/views/pages/monitor.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="296" column="50" selection-start="10452" selection-end="10452" vertical-scroll-proportion="0.24107143">
+        <state line="30" column="105" selection-start="1427" selection-end="1427" vertical-scroll-proportion="15.166667">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/overrides.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="1" selection-start="167" selection-end="167" vertical-scroll-proportion="0.36649215">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/monitor.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/pages/reports.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="247" column="20" selection-start="5491" selection-end="5491" vertical-scroll-proportion="0.89071035">
+          <folding>
+            <element signature="tag#div#1;tag#div#3;tag#div#0" expanded="false" />
+            <element signature="tag#div#2;tag#div#3;tag#div#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

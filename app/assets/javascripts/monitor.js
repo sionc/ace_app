@@ -18,7 +18,7 @@ var getCurrentProcessManagerData = function() {
         type: 'GET',
         url: '/process_managers/get_current_statistics',
         dataType: 'json',
-        timeout:2000,
+        timeout:5000,
         success: function(data){
             processManagerData = jQuery.parseJSON(JSON.stringify(data));
 
@@ -97,28 +97,12 @@ var initializePpmBySource = function () {
        var sourcePath = s.substr(0, pos);
        var sourceType = sourcePath.substr(0, sourcePath.indexOf(":"));
        ppmBySource[sourcePath] = {type: sourceType,
-                                  current_value: 0.0};
+                                  current_value: parseFloat($(this).text())};
    });
 };
 
 var getDataItemIdentifier = function(sourcePath, dataItemName) {
      return sourcePath + "/" + dataItemName;
-};
-
-var initializeCollapsible = function() {
-    $('[id^="stat-summary-table"]').each(function() {
-        var id = "#" + $(this).attr('id');
-        var icon = $('[data-target='+id+']').find('i');
-        $(this).on('hidden', function () {
-            $(icon).removeClass("icon-chevron-down");
-            $(icon).addClass("icon-chevron-right");
-        });
-
-        $(this).on('shown', function () {
-            $(icon).removeClass("icon-chevron-right");
-            $(icon).addClass("icon-chevron-down");
-        });
-    });
 };
 
 var initializePartsPerMinuteChart = function() {
@@ -323,12 +307,11 @@ $(function(){
    // clearInterval(intervalID);
 
    initializePpmBySource();
-   //initializeCollapsible();
    initializePartsPerMinuteChart();
 
-   //if ($("#live-belt-ipm-chart-container").length == 0)
-   //     return;
+   if ($("#live-belt-ipm-chart-container").length == 0)
+        return;
 
-   //initializeBeltInstancesPerMinuteChart();
+   initializeBeltInstancesPerMinuteChart();
 });
 
