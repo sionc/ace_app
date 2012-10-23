@@ -128,7 +128,7 @@ var initializePartsPerMinuteChart = function() {
 
 				for (var i = -19; i <= 0; i++) {
 					data.push({
-						x: time + i * 5000,
+						x: time + i * 2000,
 						y: current_value
 					});
 				}
@@ -155,7 +155,7 @@ var initializePartsPerMinuteChart = function() {
                             var currentData = ppmBySource[curSeries.name].current_value;
                             curSeries.addPoint([x, currentData], true, true);
                         }
-                    }, 5000);
+                    }, 2000);
                 }
 			},
             backgroundColor: 'transparent',
@@ -224,7 +224,7 @@ var initializeBeltInstancesPerMinuteChart = function() {
 
                for (var i = -19; i <= 0; i++) {
                    data.push({
-                       x: time + i * 5000,
+                       x: time + i * 2000,
                        y: current_value
                    });
                }
@@ -251,7 +251,7 @@ var initializeBeltInstancesPerMinuteChart = function() {
                             var currentData = ppmBySource[curSeries.name].current_value;
                             curSeries.addPoint([x, currentData], true, true);
                         }
-                    }, 5000);
+                    }, 2000);
 				}
 			},
             backgroundColor: 'transparent',

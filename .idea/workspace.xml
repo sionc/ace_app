@@ -35,7 +35,7 @@
       <file leaf-file-name="monitor.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/monitor.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="130" column="39" selection-start="4089" selection-end="4089" vertical-scroll-proportion="0.29319373">
+            <state line="253" column="24" selection-start="7286" selection-end="7286" vertical-scroll-proportion="0.52879584">
               <folding />
             </state>
           </provider>
@@ -600,7 +600,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/monitor.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="130" column="39" selection-start="4089" selection-end="4089" vertical-scroll-proportion="0.29319373">
+        <state line="253" column="24" selection-start="7286" selection-end="7286" vertical-scroll-proportion="0.52879584">
           <folding />
         </state>
       </provider>
