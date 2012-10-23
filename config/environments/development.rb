@@ -37,4 +37,7 @@ AceApp::Application.configure do
 
   # Devise setting
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
+  # Don't fallback to assets pipeline if a precompiled asset is missed
+  config.assets.compile = true
 end
