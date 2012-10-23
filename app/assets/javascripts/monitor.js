@@ -297,10 +297,19 @@ var initializeBeltInstancesPerMinuteChart = function() {
 	});
 };
 
+var initializeStatisticsSummary = function() {
+    $("#stat-summary-accordion").accordion({
+        heightStyle: "content",
+        collapsible: true,
+        active: false
+    });
+};
+
 $(function(){
    if ($("#live-ppm-chart-container").length == 0)
         return;
 
+   initializeStatisticsSummary();
    setupAjax();
    var intervalID = setInterval(getCurrentProcessManagerData, 5000);
    // To clear periodic update

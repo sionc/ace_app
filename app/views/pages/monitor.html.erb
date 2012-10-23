@@ -5,68 +5,56 @@
 
     <div class="span6 stat-summary">
 
-      <div class="accordion" id="stat-summary-accordion">
+      <div id="stat-summary-accordion" class="widget-stat-summary">
+
         <% @sources.each_with_index do |source, index| %>
             <%# @sources.sort_by { |s| s.statistics_source_type.name }.each_with_index do |source, index| %>
             <% source_type = source.statistics_source_type %>
             <% data_items = source.data_items %>
 
-            <div class="accordion-group">
-              <div class="accordion-heading">
+            <div class="stat-summary-header">
+              <div class="stat-summary-header-description">
 
-                <div class="stat-summary-description">
-                  <h4>
-                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#stat-summary-accordion" href="#stat-summary-table-<%= index %>">
-                      <%= name = (source_type.name == "Process Strategy") ? source_type.name : source.source_path.split('/').last %>
-                    </a>
-                  </h4>
-                  <h6 class="muted"><%= source.source_path %></h6>
-                </div>
-
-                <% unless source_type.name == "Process Strategy" %>
-                    <div class="stat-summary-value">
-
-                      <% default_ppms = {"Process Manager" => 320, "Robot 1" => 181, "Robot 2" => 141,
-                                         "Front Belt" => 726, "Rear Belt" => 544} %>
-                      <h4 id="<%= source.source_path %>-ppm" class="text-success"><%= default_ppms[name] %></h4>
-                      <h6 class="muted">PPM</h6>
-
-                    </div>
-                <% end %>
+                <h4 class="stat-summary-header-name">
+                  <%= name = (source_type.name == "Process Strategy") ? source_type.name : source.source_path.split('/').last %>
+                </h4>
+                <h6 class="muted"><%= source.source_path %></h6>
 
               </div>
 
-              <div id="stat-summary-table-<%= index %>" class="accordion-body collapse">
-                <div class="accordion-inner">
-                  <div class="widget widget-table">
+              <% unless source_type.name == "Process Strategy" %>
+                  <div class="stat-summary-header-value">
 
-                    <div class="widget-content stat-summary-content">
-                      <table class="table table-bordered table-striped">
-
-                        <tbody>
-
-                        <% data_items.each do |di| %>
-                            <% di_type = di.data_item_type %>
-                            <% di_id = source.source_path + "/" + di_type.name %>
-                            <tr>
-
-                              <td class="description"><%= di_type.name %> </td>
-                              <td id="<%= di_id %>" class="value"><%= di_type.default_value %> <%= di_type.unit %></td>
-
-                            </tr>
-                        <% end %>
-
-                        </tbody>
-                      </table>
-
-                    </div>
-                    <!-- .widget-content -->
+                    <% default_ppms = {"Process Manager" => 320, "Robot 1" => 181, "Robot 2" => 141,
+                                       "Front Belt" => 726, "Rear Belt" => 544} %>
+                    <h4 id="<%= source.source_path %>-ppm" class="text-success"><%= default_ppms[name] %></h4>
+                    <h6 class="muted">PPM</h6>
 
                   </div>
-                </div>
-              </div>
+              <% end %>
             </div>
 
+
+            <div>
+
+              <table class="table stat-summary-table">
+                <tbody>
+
+                <% data_items.each do |di| %>
+                    <% di_type = di.data_item_type %>
+                    <% di_id = source.source_path + "/" + di_type.name %>
+                    <tr>
+
+                      <td class="description"><%= di_type.name %> </td>
+                      <td id="<%= di_id %>" class="value"><%= di_type.default_value %> <%= di_type.unit %></td>
+
+                    </tr>
+                <% end %>
+
+                </tbody>
+              </table>
+
+            </div>
 
         <% end %>
 
