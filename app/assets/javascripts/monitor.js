@@ -1,7 +1,8 @@
 var processManagerData;
 var dataItems = {};
 var ppmBySource = {};
-var lastEntryId = -1;
+var ppmChart;
+var ipmChart;
 
 // Setup the Ajax token for Javascript
 var setupAjax = function() {
@@ -41,6 +42,9 @@ var getCurrentProcessManagerData = function() {
                     dataItems[id] = item;
 
                     if (item.name == "Instances Per Minute" || item.name == "Parts Per Minute") {
+                        //if (item.current_value > 0)
+                            item.current_value = Math.round((item.current_value + (Math.random() * 20)) * 100)/100;
+
                         ppmBySource[source.path] = { type: source.type,
                                                      current_value: item.current_value};
                     }
@@ -49,16 +53,13 @@ var getCurrentProcessManagerData = function() {
 
             updateDataItemValues();
             updatePpmValues();
+            updateLineChart(ppmChart);
+            updateLineChart(ipmChart);
         }
     });
 };
 
 var IsEntryCurrent = function(entryId, entryTimestamp) {
-//   if (entryId == lastEntryId)
-//       return false;
-//
-//   lastEntryId = entryId;
-
    var now = new Date();
    var curTime = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(),
        now.getUTCHours(), now.getUTCMinutes(), now.getUTCSeconds());
@@ -137,27 +138,11 @@ var initializePartsPerMinuteChart = function() {
         });
     }
 
-	var chart = new Highcharts.Chart({
+	ppmChart = new Highcharts.Chart({
 		chart: {
 			renderTo: 'live-ppm-chart-container',
 			type: 'spline',
 			marginRight: 10,
-			events: {
-                load: function() {
-
-                    // set up the updating of the chart each second
-                    var s = this.series;
-                    setInterval(function() {
-                        var numSeries = s.length;
-                        var x = (new Date()).getTime();
-                        for (var i = 0; i < numSeries; i++) {
-                            var curSeries = s[i];
-                            var currentData = ppmBySource[curSeries.name].current_value;
-                            curSeries.addPoint([x, currentData], true, true);
-                        }
-                    }, 2000);
-                }
-			},
             backgroundColor: 'transparent',
             borderColor: 'transparent',
             borderWidth: '1',
@@ -201,6 +186,18 @@ var initializePartsPerMinuteChart = function() {
 	});
 };
 
+var updateLineChart = function(chart) {
+      // set up the updating of the chart each second
+    var s = chart.series;
+    var numSeries = s.length;
+    var x = (new Date()).getTime();
+    for (var i = 0; i < numSeries; i++) {
+        var curSeries = s[i];
+        var currentData = ppmBySource[curSeries.name].current_value;
+        curSeries.addPoint([x, currentData], true, true);
+    }
+};
+
 var initializeBeltInstancesPerMinuteChart = function() {
    Highcharts.setOptions({
 		global: {
@@ -233,27 +230,11 @@ var initializeBeltInstancesPerMinuteChart = function() {
        });
     }
 
-	var chart = new Highcharts.Chart({
+	ipmChart = new Highcharts.Chart({
 		chart: {
 			renderTo: 'live-belt-ipm-chart-container',
 			type: 'spline',
 			marginRight: 10,
-			events: {
-				load: function() {
-
-					 // set up the updating of the chart each second
-                    var s = this.series;
-                    setInterval(function() {
-                        var numSeries = s.length;
-                        var x = (new Date()).getTime();
-                        for (var i = 0; i < numSeries; i++) {
-                            var curSeries = s[i];
-                            var currentData = ppmBySource[curSeries.name].current_value;
-                            curSeries.addPoint([x, currentData], true, true);
-                        }
-                    }, 2000);
-				}
-			},
             backgroundColor: 'transparent',
             borderColor: 'transparent',
             borderWidth: '1',
@@ -309,12 +290,8 @@ $(function(){
    if ($("#live-ppm-chart-container").length == 0)
         return;
 
-   initializeStatisticsSummary();
    setupAjax();
-   var intervalID = setInterval(getCurrentProcessManagerData, 5000);
-   // To clear periodic update
-   // clearInterval(intervalID);
-
+   initializeStatisticsSummary();
    initializePpmBySource();
    initializePartsPerMinuteChart();
 
@@ -322,5 +299,10 @@ $(function(){
         return;
 
    initializeBeltInstancesPerMinuteChart();
+
+   var intervalID = setInterval(getCurrentProcessManagerData, 2000);
+
+   // To clear periodic update
+   // clearInterval(intervalID);
 });
 
