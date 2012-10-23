@@ -23,13 +23,21 @@ $(function() {
       $("#home_tab").removeClass("active");
       $("#monitor_tab").addClass("active");
       $("#reports_tab").removeClass("active");
+      $("#info_tab").removeClass("active");
     } else if (pathname == "/pages/reports") {
       $("#home_tab").removeClass("active");
       $("#monitor_tab").removeClass("active");
       $("#reports_tab").addClass("active");
+      $("#info_tab").removeClass("active");
+    } else if (pathname == "/pages/info") {
+      $("#home_tab").removeClass("active");
+      $("#monitor_tab").removeClass("active");
+      $("#reports_tab").removeClass("active");
+      $("#info_tab").addClass("active");
     } else {
       $("#home_tab").addClass("active");
       $("#monitor_tab").removeClass("active");
       $("#reports_tab").removeClass("active");
+      $("#info_tab").removeClass("active");
     }
 });

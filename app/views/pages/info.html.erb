@@ -4,7 +4,7 @@
 
     <div class="span12">
 
-      <div class="widget">
+      <div class="widget widget-info">
 
         <div class="widget-header">
           <i class="icon-star"></i>
@@ -14,34 +14,24 @@
         <!-- /widget-header -->
 
         <div class="widget-content">
-          <div>
-            <p>The proposal is to create a web application that will display current status of a production
-              system to our customers. The application will also archive the production data to enable
-              customers to generate reports and view trends in the data. It will also enable our application
-              engineers to better support our customers.
-            </p>
+          <!--<div>-->
+            <!--<p>The proposal is to create a web application that will display current status of a production-->
+              <!--system to our customers. The application will also archive the production data to enable-->
+              <!--customers to generate reports and view trends in the data. It will also enable our application-->
+              <!--engineers to better support our customers.-->
+            <!--</p>-->
 
-            <p>The application will be developed as a RESTful (Representational State Transfer) web service.
-              It will utilize HTTP methods such as GET, POST, PUT, and DELETE for exchanging data with
-              Adept ACE. This application will be accessible through a web browser on a PC or a Mac.
-              However, it will utilize a responsive design which will make it viewable on mobile devices
-              and tablets. The following image represents the data flow.
-            </p>
-            <%= image_tag "info.png" %>
-          </div>
-          <br/>
-          <br/>
+            <!--<p>The application will be developed as a RESTful (Representational State Transfer) web service.-->
+              <!--It will utilize HTTP methods such as GET, POST, PUT, and DELETE for exchanging data with-->
+              <!--Adept ACE. This application will be accessible through a web browser on a PC or a Mac.-->
+              <!--However, it will utilize a responsive design which will make it viewable on mobile devices-->
+              <!--and tablets. The following image represents the data flow.-->
+            <!--</p>-->
+            <%= image_tag "info2.jpg" %>
+          <!--</div>-->
+          <!--<br/>-->
+          <!--<br/>-->
 
-          <div>
-            <p>The chart below is displaying live data from an Adept ACE application running in emulation
-              mode. A script in Adept ACE is updating (PUTs) the value of an attribute on the web server
-              every second. The web client reads (GETs) the data from the server and plots
-              the point on the chart. This example uses GET and PUT to show the application of two
-              CRUD operations: read and update.</p>
-
-            <div id="live-data-chart-container">
-            </div>
-          </div>
         </div>
         <!-- /widget-content -->
 
@@ -50,51 +40,6 @@
 
     </div>
     <!-- /span8 -->
-
-
-    <div class="span12">
-
-      <div class="widget widget-box">
-
-        <div class="widget-header">
-          <i class="icon-envelope"></i>
-
-          <h3>Feedback</h3>
-        </div>
-        <!-- /widget-header -->
-
-        <div class="widget-content">
-          <div>
-            <p id="current-user"> Hi
-              <% if current_user.first_name.nil? %>
-                  <%= current_user.email + "," %>
-              <% else %>
-                  <%= current_user.first_name + "," %>
-              <% end %>
-            </p>
-            <p>Do you think this product will be useful for Adept?</p>
-            <textarea rows="4" id="comment-textarea" class="input-xlarge"></textarea>
-            <br />
-            <button id="share-feedback" class="btn btn-large">
-              <i class="icon-share">&nbsp</i>Share Feedback
-            </button>
-          </div>
-          <br/>
-
-          <h6>Comments</h6>
-          <br />
-          <div id="comments-container">
-
-          </div>
-        </div>
-        <!-- /widget-content -->
-
-      </div>
-      <!-- /widget -->
-
-    </div>
-    <!-- /span4 -->
-
 
   </div>
   <!-- /row -->
