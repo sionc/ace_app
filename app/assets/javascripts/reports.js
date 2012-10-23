@@ -106,7 +106,11 @@ var displayWeeklyProgressChart = function() {
     var chart = new Highcharts.Chart({
         chart: {
             renderTo: 'weekly-progress-chart',
-            type: 'column'
+            type: 'column',
+            backgroundColor: 'transparent',
+            borderColor: 'transparent',
+            borderWidth: '1',
+            plotBackgroundColor: 'transparent'
         },
         title: {
             text: ''
@@ -190,9 +194,12 @@ var displayProductDistributionChart = function() {
     chart = new Highcharts.Chart({
         chart: {
             renderTo: 'product-distribution-chart',
-            plotBackgroundColor: null,
             plotBorderWidth: null,
-            plotShadow: false
+            plotShadow: false,
+            backgroundColor: 'transparent',
+            borderColor: 'transparent',
+            borderWidth: '1',
+            plotBackgroundColor: 'transparent'
         },
         credits: {
             enabled:false
@@ -283,7 +290,11 @@ var displayProductFlowChart = function() {
     function createChart() {
         chart = new Highcharts.StockChart({
             chart: {
-                renderTo: 'product-flow-chart'
+                renderTo: 'product-flow-chart',
+                backgroundColor: 'transparent',
+                borderColor: 'transparent',
+                borderWidth: '1',
+                plotBackgroundColor: 'transparent'
             },
 
             credits: {

@@ -9,3 +9,7 @@
 .main {
     border-bottom: none;
 }
+
+.widget-content {
+    background-color: transparent;
+}

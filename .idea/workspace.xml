@@ -23,10 +23,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="application.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="application.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="21" selection-start="665" selection-end="665" vertical-scroll-proportion="0.34554973">
+            <state line="15" column="21" selection-start="665" selection-end="665" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -35,7 +35,16 @@
       <file leaf-file-name="monitor.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/monitor.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="491" column="17" selection-start="13587" selection-end="13587" vertical-scroll-proportion="0.0">
+            <state line="275" column="48" selection-start="7821" selection-end="7970" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="reports.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/reports.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="296" column="50" selection-start="10452" selection-end="10452" vertical-scroll-proportion="0.24107143">
               <folding />
             </state>
           </provider>
@@ -77,19 +86,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.css.scss" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="19" selection-start="506" selection-end="522" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="monitor.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/pages/monitor.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="82" column="25" selection-start="3248" selection-end="3248" vertical-scroll-proportion="0.0">
+            <state line="135" column="59" selection-start="4601" selection-end="4625" vertical-scroll-proportion="-9.833333">
               <folding />
             </state>
           </provider>
@@ -98,16 +98,16 @@
       <file leaf-file-name="monitor.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/monitor.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="13" selection-start="606" selection-end="606" vertical-scroll-proportion="0.0">
+            <state line="36" column="1" selection-start="677" selection-end="677" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/base.js">
+      <file leaf-file-name="overrides.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/overrides.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="14" column="1" selection-start="167" selection-end="167" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -123,22 +123,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/controllers/pages_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/pages/dashboard.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/dashboard.js" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/reports.js" />
         <option value="$PROJECT_DIR$/app/views/pages/reports.html.erb" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/app/views/pages/monitor.html.erb" />
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/monitor.css" />
         <option value="$PROJECT_DIR$/config/environments/development.rb" />
         <option value="$PROJECT_DIR$/config/environments/production.rb" />
         <option value="$PROJECT_DIR$/config/application.rb" />
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/jquery.js" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/bootstrap-collapse.js" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/monitor.js" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/application.js" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/monitor.js" />
+        <option value="$PROJECT_DIR$/app/views/pages/monitor.html.erb" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/monitor.css" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/overrides.css" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/reports.js" />
       </list>
     </option>
   </component>
@@ -613,13 +613,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/highcharts.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/environments/development.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="38" column="74" selection-start="1463" selection-end="1463" vertical-scroll-proportion="0.0">
@@ -651,20 +644,6 @@
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="19" selection-start="506" selection-end="522" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/pages/monitor.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="82" column="25" selection-start="3248" selection-end="3248" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/monitor.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="13" selection-start="606" selection-end="606" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -704,16 +683,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/monitor.js">
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="491" column="17" selection-start="13587" selection-end="13587" vertical-scroll-proportion="0.0">
+        <state line="15" column="21" selection-start="665" selection-end="665" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
+    <entry file="file://$PROJECT_DIR$/app/views/pages/monitor.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="21" selection-start="665" selection-end="665" vertical-scroll-proportion="0.34554973">
+        <state line="135" column="59" selection-start="4601" selection-end="4625" vertical-scroll-proportion="-9.833333">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/monitor.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="1" selection-start="677" selection-end="677" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/overrides.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="1" selection-start="167" selection-end="167" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/monitor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="275" column="48" selection-start="7821" selection-end="7970" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/reports.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="296" column="50" selection-start="10452" selection-end="10452" vertical-scroll-proportion="0.24107143">
           <folding />
         </state>
       </provider>
