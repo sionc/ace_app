@@ -29,8 +29,13 @@ class PagesController < ApplicationController
     parts_per_minute = data_item_values.where(:data_item_id => parts_per_minute_id).last.current_value
     processing_time = data_item_values.where(:data_item_id => processing_time_id).last.current_value
     total_uptime = data_item_values.where(:data_item_id => total_up_time_id).last.current_value/1000
-    total_uptime_str = (total_uptime/3600).to_i.to_s + ":" + ((total_uptime % 3600)/60).to_i.to_s + ":" +
-                      (total_uptime % 60).to_i.to_s
+    one_day = 3600 * 24
+    one_hr = 3600
+    one_min = 60
+    total_uptime_str = ""
+    total_uptime_str += ((total_uptime / one_day)).to_i.to_s + " d " unless (total_uptime < one_day)
+    total_uptime_str += ((total_uptime % one_day)/one_hr).to_i.to_s + " h " unless (total_uptime < one_hr)
+    total_uptime_str += ((total_uptime % one_hr)/one_min).to_i.to_s + " m"
 
     @pm_data_item_values = {"Parts Processed" => parts_processed, "Parts Per Minute" => parts_per_minute,
                             "Processing Time" => processing_time, "Total Uptime" => total_uptime_str}

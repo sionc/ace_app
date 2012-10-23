@@ -41,10 +41,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_subnavbar.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="_subnavbar.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/_subnavbar.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="55" column="44" selection-start="1430" selection-end="1430" vertical-scroll-proportion="0.7103825">
+            <state line="55" column="44" selection-start="1430" selection-end="1430" vertical-scroll-proportion="-34.375">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dashboard.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/pages/dashboard.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="47" column="8" selection-start="1062" selection-end="1062" vertical-scroll-proportion="-16.25">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pages_controller.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/controllers/pages_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="34" column="24" selection-start="1773" selection-end="1773" vertical-scroll-proportion="0.6806283">
               <folding />
             </state>
           </provider>
@@ -77,28 +95,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="jquery.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/jquery.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="jquery-ui.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/jquery-ui.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="monitor.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/pages/monitor.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="60" column="12" selection-start="2008" selection-end="2008" vertical-scroll-proportion="-3.125">
+            <state line="60" column="12" selection-start="2008" selection-end="2008" vertical-scroll-proportion="-33.583332">
               <folding />
             </state>
           </provider>
@@ -123,8 +123,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/config/environments/development.rb" />
-        <option value="$PROJECT_DIR$/config/environments/production.rb" />
         <option value="$PROJECT_DIR$/config/application.rb" />
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/jquery.js" />
@@ -139,6 +137,8 @@
         <option value="$PROJECT_DIR$/app/views/pages/info.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/application.js" />
         <option value="$PROJECT_DIR$/app/views/layouts/_subnavbar.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/pages/dashboard.html.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/pages_controller.rb" />
       </list>
     </option>
   </component>
@@ -287,6 +287,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ace_app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ace_app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -675,20 +693,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/base.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/bootstrap.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1562" column="17" selection-start="39053" selection-end="43553" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/reports.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="296" column="50" selection-start="10452" selection-end="10452" vertical-scroll-proportion="0.0">
@@ -741,13 +745,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/pages/monitor.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="12" selection-start="2008" selection-end="2008" vertical-scroll-proportion="-3.125">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/monitor.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="65" column="44" selection-start="2270" selection-end="2270" vertical-scroll-proportion="0.0">
@@ -785,7 +782,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/_subnavbar.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="44" selection-start="1430" selection-end="1430" vertical-scroll-proportion="0.7103825">
+        <state line="55" column="44" selection-start="1430" selection-end="1430" vertical-scroll-proportion="-34.375">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/pages/monitor.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="60" column="12" selection-start="2008" selection-end="2008" vertical-scroll-proportion="-33.583332">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/pages/dashboard.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="8" selection-start="1062" selection-end="1062" vertical-scroll-proportion="-16.25">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/pages_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="24" selection-start="1773" selection-end="1773" vertical-scroll-proportion="0.6806283">
           <folding />
         </state>
       </provider>
