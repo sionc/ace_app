@@ -42,7 +42,7 @@ var getCurrentProcessManagerData = function() {
                     dataItems[id] = item;
 
                     if (item.name == "Instances Per Minute" || item.name == "Parts Per Minute") {
-                        //if (item.current_value > 0)
+                        if (item.current_value > 0)
                             item.current_value = Math.round((item.current_value + (Math.random() * 20)) * 100)/100;
 
                         ppmBySource[source.path] = { type: source.type,
