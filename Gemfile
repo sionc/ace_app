@@ -6,7 +6,7 @@ gem 'rails', '3.2.5'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 # gem for postgresql
-#gem 'pg'
+gem 'pg'
 
 # gem for mysql
 gem 'mysql2', '~> 0.3'

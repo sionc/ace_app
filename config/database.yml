@@ -86,10 +86,9 @@ test:
 
 # Adapter settings for mysql
 production:
-  adapter: mysql2
-  encoding: utf8
+  adapter: postgresql
+  encoding: unicode
   database: ace_app_production
+  pool: 5
   username: ace_app_user
-  password: robots
-  host: localhost
-  port: 80
+  password:
