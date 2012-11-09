@@ -25,7 +25,7 @@ var getCurrentProcessManagerData = function() {
 
             var entryId = processManagerData.entry_id;
             var entryTimestamp = processManagerData.entry_timestamp;
-            var isCurrent = IsEntryCurrent(entryId, entryTimestamp);
+            var isCurrent = true; //IsEntryCurrent(entryId, entryTimestamp);
 
             var numSources = processManagerData.statistics_sources.length;
             for(var i = 0; i < numSources; i++) {
